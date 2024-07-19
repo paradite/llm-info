@@ -20,7 +20,7 @@ export const AI_PROVIDERS = {
 
 export type AI_PROVIDER_TYPE = (typeof AI_PROVIDERS)[keyof typeof AI_PROVIDERS];
 
-type ModelInfo = {
+export type ModelInfo = {
   name: string;
   provider: AI_PROVIDER_TYPE;
   contextWindowTokenLimit: number;
