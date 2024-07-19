@@ -3,14 +3,16 @@
 [![NPM version](https://img.shields.io/npm/v/llm-info.svg?style=flat-square)](https://npmjs.org/package/llm-info)
 [![CI](https://github.com/paradite/llm-info/actions/workflows/node.js.yml/badge.svg)](https://github.com/paradite/llm-info/actions/workflows/node.js.yml)
 
-Information on LLM models:
+Information on LLM models, context window token limit, output token limit, pricing and more.
+
+Information provided includes:
 
 - context window token limit
 - output token limit
 - pricing
 - and more
 
-## Models
+Models included:
 
 - GPT-4
 - GPT-4o
