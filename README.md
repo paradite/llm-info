@@ -1,5 +1,8 @@
 # llm-info
 
+[![NPM version](https://img.shields.io/npm/v/llm-info.svg?style=flat-square)](https://npmjs.org/package/llm-info)
+[![CI](https://github.com/paradite/llm-info/actions/workflows/node.js.yml/badge.svg)](https://github.com/paradite/llm-info/actions/workflows/node.js.yml)
+
 Information on LLM models:
 
 - context window token limit
