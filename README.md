@@ -16,6 +16,7 @@ Models included:
 
 - GPT-4
 - GPT-4o
+- GPT-4o mini
 - Claude 3.5 Sonnet
 
 ## Install:
@@ -35,35 +36,42 @@ console.log(AllModels);
 const model = ModelEnum['gpt-4'];
 const modelInfo = ModelInfoMap[model];
 console.log(modelInfo);
-
-// {
-//   name: 'GPT-4',
-//   contextWindowTokenLimit: 128000,
-//   outputTokenLimit: 4096,
-//   pricePerMillionInputTokens: 30,
-//   pricePerMillionOutputTokens: 60
-// }
+/*
+{
+  name: 'GPT-4',
+  provider: 'openai',
+  contextWindowTokenLimit: 128000,
+  outputTokenLimit: 4096,
+  pricePerMillionInputTokens: 30,
+  pricePerMillionOutputTokens: 60
+}
+*/
 
 console.log(ModelInfoMap[ModelEnum['claude-3-5-sonnet-20240620']]);
-// {
-//   name: 'Claude 3.5 Sonnet',
-//   contextWindowTokenLimit: 200000,
-//   outputTokenLimit: 4096,
-//   pricePerMillionInputTokens: 3,
-//   pricePerMillionOutputTokens: 15
-// }
+/*
+{
+  name: 'Claude 3.5 Sonnet',
+  provider: 'anthropic',
+  contextWindowTokenLimit: 200000,
+  outputTokenLimit: 4096,
+  pricePerMillionInputTokens: 3,
+  pricePerMillionOutputTokens: 15
+}
+*/
 
 const modelLike = ModelLikeEnum['chatgpt'];
 const modelLikeInfo = ModelInfoMap[modelLike];
 console.log(modelLikeInfo);
-
-// {
-//   name: 'ChatGPT',
-//   contextWindowTokenLimit: 4096,
-//   outputTokenLimit: 4096,
-//   pricePerMillionInputTokens: null,
-//   pricePerMillionOutputTokens: null
-// }
+/*
+{
+  name: 'ChatGPT',
+  provider: 'openai',
+  contextWindowTokenLimit: 4096,
+  outputTokenLimit: 4096,
+  pricePerMillionInputTokens: null,
+  pricePerMillionOutputTokens: null
+}
+*/
 ```
 
 ## Testing
