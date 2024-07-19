@@ -5,13 +5,15 @@ export enum ModelEnum {
   'claude-3-5-sonnet-20240620' = 'claude-3-5-sonnet-20240620',
 }
 
-export enum ModelLikeEnum {
+export enum NonModelEnum {
   'chatgpt' = 'chatgpt',
 }
 
 export const AllModels = Object.values(ModelEnum);
 
-export type ModelLike = ModelEnum | ModelLikeEnum;
+export const AllModelLikes = [...AllModels, ...Object.values(NonModelEnum)];
+
+export type ModelLike = ModelEnum | NonModelEnum;
 
 export const AI_PROVIDERS = {
   OPENAI: 'openai',
@@ -62,7 +64,7 @@ export const ModelInfoMap: Record<ModelLike, ModelInfo> = {
     pricePerMillionInputTokens: 3,
     pricePerMillionOutputTokens: 15,
   },
-  [ModelLikeEnum['chatgpt']]: {
+  [NonModelEnum['chatgpt']]: {
     name: 'ChatGPT',
     provider: AI_PROVIDERS.OPENAI,
     contextWindowTokenLimit: 4096,

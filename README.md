@@ -19,6 +19,10 @@ Models included:
 - GPT-4o mini
 - Claude 3.5 Sonnet
 
+Non-models (model-like) included:
+
+- ChatGPT
+
 ## Install:
 
 ```bash
@@ -28,10 +32,21 @@ $ yarn add llm-info
 ## Usage
 
 ```ts
-import { AllModels, ModelEnum, ModelLikeEnum, ModelInfoMap } from 'llm-info';
+import { AllModels, ModelEnum, NonModelEnum, ModelInfoMap } from 'llm-info';
 
 console.log(AllModels);
 // [ 'gpt-4', 'gpt-4o', 'gpt-4o-mini', 'claude-3-5-sonnet-20240620' ]
+
+console.log(AllModelLikes);
+/*
+[
+  'gpt-4',
+  'gpt-4o',
+  'gpt-4o-mini',
+  'claude-3-5-sonnet-20240620',
+  'chatgpt'
+]
+*/
 
 const model = ModelEnum['gpt-4'];
 const modelInfo = ModelInfoMap[model];
@@ -59,7 +74,7 @@ console.log(ModelInfoMap[ModelEnum['claude-3-5-sonnet-20240620']]);
 }
 */
 
-const modelLike = ModelLikeEnum['chatgpt'];
+const modelLike = NonModelEnum['chatgpt'];
 const modelLikeInfo = ModelInfoMap[modelLike];
 console.log(modelLikeInfo);
 /*
