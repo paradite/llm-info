@@ -1,0 +1,30 @@
+{
+  "name": "llm-info",
+  "version": "1.0.0",
+  "description": "Information on LLM models, context window token limit, output token limit, pricing and more",
+  "main": "index.js",
+  "scripts": {
+    "compile": "tsup src/index.ts --dts --format esm,cjs",
+    "prepublishOnly": "rm -rf ./dist && npm run compile",
+    "test": "jest"
+  },
+  "author": "paradite",
+  "license": "MIT",
+  "keywords": [
+    "llm",
+    "language model",
+    "model",
+    "info",
+    "token",
+    "context-window",
+    "pricing",
+    "token-limit"
+  ],
+  "devDependencies": {
+    "@types/jest": "^29.5.12",
+    "jest": "^29.7.0",
+    "ts-jest": "^29.2.3",
+    "tsup": "^8.2.0",
+    "typescript": "^5.5.3"
+  }
+}
