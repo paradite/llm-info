@@ -2,7 +2,16 @@
   "name": "llm-info",
   "version": "1.0.0",
   "description": "Information on LLM models, context window token limit, output token limit, pricing and more",
-  "main": "index.js",
+  "main": "dist/index.js",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "require": "./dist/index.js",
+      "import": "./dist/index.mjs",
+      "types": "./dist/index.d.ts"
+    }
+  },
   "scripts": {
     "compile": "tsup src/index.ts --dts --format esm,cjs",
     "prepublishOnly": "rm -rf ./dist && npm run compile",
