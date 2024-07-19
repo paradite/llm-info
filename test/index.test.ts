@@ -5,6 +5,7 @@ describe('llm', () => {
     expect(AllModels).toEqual([
       'gpt-4',
       'gpt-4o',
+      'gpt-4o-mini',
       'claude-3-5-sonnet-20240620',
     ]);
   });

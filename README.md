@@ -31,7 +31,7 @@ $ yarn add llm-info
 import { AllModels, ModelEnum, ModelLikeEnum, ModelInfoMap } from 'llm-info';
 
 console.log(AllModels);
-// [ 'gpt-4', 'gpt-4o', 'claude-3-5-sonnet-20240620' ]
+// [ 'gpt-4', 'gpt-4o', 'gpt-4o-mini', 'claude-3-5-sonnet-20240620' ]
 
 const model = ModelEnum['gpt-4'];
 const modelInfo = ModelInfoMap[model];
