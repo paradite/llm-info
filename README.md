@@ -63,4 +63,6 @@ console.log(modelLikeInfo);
 
 ## Testing
 
-TODO
+```
+$ yarn test
+```
