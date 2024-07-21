@@ -26,10 +26,9 @@ describe('llm', () => {
     ]);
   });
   it('info works', () => {
-    const model = ModelEnum['gpt-4'];
-    const modelInfo = ModelInfoMap[model];
+    const modelInfo = ModelInfoMap['gpt-4o'];
     console.log(modelInfo);
-    expect(modelInfo.name).toBe('GPT-4');
+    expect(modelInfo.name).toBe('GPT-4o');
 
     console.log(ModelInfoMap[ModelEnum['claude-3-5-sonnet-20240620']]);
 
