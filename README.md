@@ -32,6 +32,7 @@ $ yarn add llm-info
 ## Usage
 
 ```ts
+// Models
 import { AllModels, ModelEnum, NonModelEnum, ModelInfoMap } from 'llm-info';
 
 console.log(AllModels);
@@ -48,45 +49,42 @@ console.log(AllModelLikes);
 ]
 */
 
-const model = ModelEnum['gpt-4'];
-const modelInfo = ModelInfoMap[model];
+// Model Info
+const modelInfo = ModelInfoMap['gpt-4o'];
 console.log(modelInfo);
 /*
 {
-  name: 'GPT-4',
+  name: 'GPT-4o',
   provider: 'openai',
   contextWindowTokenLimit: 128000,
   outputTokenLimit: 4096,
-  pricePerMillionInputTokens: 30,
-  pricePerMillionOutputTokens: 60
+  pricePerMillionInputTokens: 5,
+  pricePerMillionOutputTokens: 15,
+  tokenizerId: 'Xenova/gpt-4o'
 }
 */
 
-console.log(ModelInfoMap[ModelEnum['claude-3-5-sonnet-20240620']]);
-/*
-{
-  name: 'Claude 3.5 Sonnet',
-  provider: 'anthropic',
-  contextWindowTokenLimit: 200000,
-  outputTokenLimit: 4096,
-  pricePerMillionInputTokens: 3,
-  pricePerMillionOutputTokens: 15
+// Tokenizer
+import { AutoTokenizer } from '@xenova/transformers';
+const testSentence =
+  "Many words map to one token, but some don't: indivisible.";
+const results: string[] = [];
+for (let i = 0; i < AllModels.length; i++) {
+  const model = AllModels[i];
+  if (ModelInfoMap[model].tokenizerId) {
+    const tokenizer = await AutoTokenizer.from_pretrained(
+      ModelInfoMap[model].tokenizerId
+    );
+    const tokens = tokenizer.encode(testSentence);
+    results.push(`${model}: ${tokens.length}`);
+  }
 }
-*/
-
-const modelLike = NonModelEnum['chatgpt'];
-const modelLikeInfo = ModelInfoMap[modelLike];
-console.log(modelLikeInfo);
-/*
-{
-  name: 'ChatGPT',
-  provider: 'openai',
-  contextWindowTokenLimit: 4096,
-  outputTokenLimit: 4096,
-  pricePerMillionInputTokens: null,
-  pricePerMillionOutputTokens: null
-}
-*/
+console.log(`Test sentence: ${testSentence}\n${results.join('\n')}`);
+// Test sentence: Many words map to one token, but some don't: indivisible.
+// gpt-4: 15
+// gpt-4o: 14
+// gpt-4o-mini: 14
+// claude-3-5-sonnet-20240620: 16
 ```
 
 ## Testing
