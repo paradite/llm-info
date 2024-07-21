@@ -1,0 +1,6 @@
+!dist
+docs
+coverage
+.github
+.vscode
+test
