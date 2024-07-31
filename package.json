@@ -1,6 +1,6 @@
 {
   "name": "llm-info",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "Information on LLM models, context window token limit, output token limit, pricing and more",
   "main": "dist/index.js",
   "type": "module",

@@ -9,6 +9,8 @@ export type ModelInfo = {
   pricePerMillionInputTokens: number | null;
   pricePerMillionOutputTokens: number | null;
   tokenizerId: string | null;
+  notes?: string;
+  notesUrl?: string;
 };
 
 export const ModelInfoMap: Record<ModelLike, ModelInfo> = {
@@ -43,10 +45,12 @@ export const ModelInfoMap: Record<ModelLike, ModelInfo> = {
     name: 'Claude 3.5 Sonnet',
     provider: AI_PROVIDERS.ANTHROPIC,
     contextWindowTokenLimit: 200000,
-    outputTokenLimit: 4096,
+    outputTokenLimit: 8192,
     pricePerMillionInputTokens: 3,
     pricePerMillionOutputTokens: 15,
     tokenizerId: 'Xenova/claude-tokenizer',
+    notes: '8192 output tokens is in beta.',
+    notesUrl: 'https://docs.anthropic.com/en/docs/about-claude/models',
   },
   [NonModelEnum['chatgpt']]: {
     name: 'ChatGPT',
