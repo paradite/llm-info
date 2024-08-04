@@ -12,6 +12,8 @@ export type ModelInfo = {
   notes?: string;
   notesUrl?: string;
   legacy?: boolean;
+  alpha?: boolean;
+  small?: boolean;
 };
 
 export const ModelInfoMap: Record<ModelLike, ModelInfo> = {
@@ -51,6 +53,7 @@ export const ModelInfoMap: Record<ModelLike, ModelInfo> = {
     pricePerMillionInputTokens: 0.15,
     pricePerMillionOutputTokens: 0.6,
     tokenizerId: 'Xenova/gpt-4o',
+    small: true,
   },
   [ModelEnum['gpt-4o-64k-output-alpha']]: {
     name: 'GPT-4o Long Output',
@@ -60,6 +63,7 @@ export const ModelInfoMap: Record<ModelLike, ModelInfo> = {
     pricePerMillionInputTokens: 6,
     pricePerMillionOutputTokens: 18,
     tokenizerId: 'Xenova/gpt-4o',
+    alpha: true,
     notes:
       'OpenAI is offering an experimental version of GPT-4o with a maximum of 64K output tokens per request.',
     notesUrl: 'https://openai.com/gpt-4o-long-output/',
