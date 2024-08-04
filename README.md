@@ -15,8 +15,10 @@ Information provided includes:
 Models included:
 
 - GPT-4
+- GPT-4 Turbo
 - GPT-4o
 - GPT-4o mini
+- GPT-4o Long Output
 - Claude 3.5 Sonnet
 
 Non-models (model-like) included:
@@ -36,13 +38,24 @@ $ yarn add llm-info
 import { AllModels, ModelEnum, NonModelEnum, ModelInfoMap } from 'llm-info';
 
 console.log(AllModels);
-// [ 'gpt-4', 'gpt-4o', 'gpt-4o-mini', 'claude-3-5-sonnet-20240620' ]
+/*
+[
+  'gpt-4',
+  'gpt-4o',
+  'gpt-4-turbo',
+  'gpt-4o-64k-output-alpha',
+  'gpt-4o-mini',
+  'claude-3-5-sonnet-20240620'
+]
+*/
 
 console.log(AllModelLikes);
 /*
 [
   'gpt-4',
   'gpt-4o',
+  'gpt-4-turbo',
+  'gpt-4o-64k-output-alpha',
   'gpt-4o-mini',
   'claude-3-5-sonnet-20240620',
   'chatgpt'
