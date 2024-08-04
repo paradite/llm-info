@@ -10,8 +10,8 @@ describe('llm', () => {
     console.log(AllModels);
     expect(AllModels).toEqual([
       'gpt-4',
-      'gpt-4o',
       'gpt-4-turbo',
+      'gpt-4o',
       'gpt-4o-64k-output-alpha',
       'gpt-4o-mini',
       'claude-3-5-sonnet-20240620',
@@ -21,8 +21,8 @@ describe('llm', () => {
     console.log(AllModelLikes);
     expect(AllModelLikes).toEqual([
       'gpt-4',
-      'gpt-4o',
       'gpt-4-turbo',
+      'gpt-4o',
       'gpt-4o-64k-output-alpha',
       'gpt-4o-mini',
       'claude-3-5-sonnet-20240620',
