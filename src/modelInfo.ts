@@ -68,6 +68,17 @@ export const ModelInfoMap: Record<ModelLike, ModelInfo> = {
       'OpenAI is offering an experimental version of GPT-4o with a maximum of 64K output tokens per request.',
     notesUrl: 'https://openai.com/gpt-4o-long-output/',
   },
+  [ModelEnum['gpt-4o-2024-08-06']]: {
+    name: 'GPT-4o 08-06',
+    provider: AI_PROVIDERS.OPENAI,
+    contextWindowTokenLimit: 128000,
+    outputTokenLimit: 16384,
+    pricePerMillionInputTokens: 2.5,
+    pricePerMillionOutputTokens: 10,
+    tokenizerId: 'Xenova/gpt-4o',
+    notes:
+      'This model is a version of GPT-4o that was released on August 6, 2024. It has a maximum of 16K output tokens per request.',
+  },
   [ModelEnum['claude-3-5-sonnet-20240620']]: {
     name: 'Claude 3.5 Sonnet',
     provider: AI_PROVIDERS.ANTHROPIC,
