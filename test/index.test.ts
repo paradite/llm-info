@@ -15,6 +15,8 @@ describe('llm', () => {
       'gpt-4o-64k-output-alpha',
       'gpt-4o-mini',
       'gpt-4o-2024-08-06',
+      'o1-preview',
+      'o1-mini',
       'claude-3-5-sonnet-20240620',
     ]);
   });
@@ -27,6 +29,8 @@ describe('llm', () => {
       'gpt-4o-64k-output-alpha',
       'gpt-4o-mini',
       'gpt-4o-2024-08-06',
+      'o1-preview',
+      'o1-mini',
       'claude-3-5-sonnet-20240620',
       'chatgpt',
     ]);
