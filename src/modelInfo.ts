@@ -89,6 +89,7 @@ export const ModelInfoMap: Record<ModelLike, ModelInfo> = {
     tokenizerId: 'Xenova/gpt-4o',
     notes:
       'An early preview of our o1 model, designed to reason about hard problems using broad general knowledge about the world.',
+    alpha: true,
   },
   [ModelEnum['o1-mini']]: {
     name: 'o1-mini',
@@ -100,6 +101,7 @@ export const ModelInfoMap: Record<ModelLike, ModelInfo> = {
     tokenizerId: 'Xenova/gpt-4o',
     notes:
       "A faster and cheaper version of o1, particularly adept at coding, math, and science tasks where extensive general knowledge isn't required.",
+    small: true,
   },
   [ModelEnum['claude-3-5-sonnet-20240620']]: {
     name: 'Claude 3.5 Sonnet',
