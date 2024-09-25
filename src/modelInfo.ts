@@ -79,6 +79,28 @@ export const ModelInfoMap: Record<ModelLike, ModelInfo> = {
     notes:
       'This model is a version of GPT-4o that was released on August 6, 2024. It has a maximum of 16K output tokens per request.',
   },
+  [ModelEnum['o1-preview']]: {
+    name: 'o1-preview',
+    provider: AI_PROVIDERS.OPENAI,
+    contextWindowTokenLimit: 128000,
+    outputTokenLimit: 32768,
+    pricePerMillionInputTokens: 15,
+    pricePerMillionOutputTokens: 60,
+    tokenizerId: 'Xenova/gpt-4o',
+    notes:
+      'An early preview of our o1 model, designed to reason about hard problems using broad general knowledge about the world.',
+  },
+  [ModelEnum['o1-mini']]: {
+    name: 'o1-mini',
+    provider: AI_PROVIDERS.OPENAI,
+    contextWindowTokenLimit: 128000,
+    outputTokenLimit: 65536,
+    pricePerMillionInputTokens: 3,
+    pricePerMillionOutputTokens: 12,
+    tokenizerId: 'Xenova/gpt-4o',
+    notes:
+      "A faster and cheaper version of o1, particularly adept at coding, math, and science tasks where extensive general knowledge isn't required.",
+  },
   [ModelEnum['claude-3-5-sonnet-20240620']]: {
     name: 'Claude 3.5 Sonnet',
     provider: AI_PROVIDERS.ANTHROPIC,
