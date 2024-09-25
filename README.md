@@ -10,6 +10,7 @@ Information provided includes:
 - context window token limit
 - output token limit
 - pricing
+- `tokenizerId` for loading tokenizer from `@xenova/transformers`
 - and more
 
 Models included:
@@ -19,7 +20,9 @@ Models included:
 - GPT-4o
 - GPT-4o mini
 - GPT-4o Long Output
+- o1
 - Claude 3.5 Sonnet
+- ... and more new models
 
 Non-models (model-like) included:
 
