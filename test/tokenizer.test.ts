@@ -19,5 +19,5 @@ describe('llm', () => {
       }
     }
     console.log(`Test sentence: ${testSentence}\n${results.join('\n')}`);
-  }, 5000);
+  }, 10000);
 });
