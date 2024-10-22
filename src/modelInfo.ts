@@ -114,6 +114,17 @@ export const ModelInfoMap: Record<ModelLike, ModelInfo> = {
     notes: '8192 output tokens is in beta.',
     notesUrl: 'https://docs.anthropic.com/en/docs/about-claude/models',
   },
+  [ModelEnum['claude-3-5-sonnet-20241022']]: {
+    name: 'Claude 3.5 Sonnet (New)',
+    provider: AI_PROVIDERS.ANTHROPIC,
+    contextWindowTokenLimit: 200000,
+    outputTokenLimit: 8192,
+    pricePerMillionInputTokens: 3,
+    pricePerMillionOutputTokens: 15,
+    tokenizerId: 'Xenova/claude-tokenizer',
+    notes: 'New version of Claude 3.5 Sonnet released on October 22, 2024.',
+    notesUrl: 'https://www.anthropic.com/news/3-5-models-and-computer-use',
+  },
   [NonModelEnum['chatgpt']]: {
     name: 'ChatGPT',
     provider: AI_PROVIDERS.OPENAI,
