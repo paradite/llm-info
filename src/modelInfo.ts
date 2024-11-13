@@ -104,7 +104,7 @@ export const ModelInfoMap: Record<ModelLike, ModelInfo> = {
     small: true,
   },
   [ModelEnum['claude-3-5-sonnet-20240620']]: {
-    name: 'Claude 3.5 Sonnet',
+    name: 'Claude 3.5 Sonnet (Old)',
     provider: AI_PROVIDERS.ANTHROPIC,
     contextWindowTokenLimit: 200000,
     outputTokenLimit: 8192,
@@ -113,9 +113,10 @@ export const ModelInfoMap: Record<ModelLike, ModelInfo> = {
     tokenizerId: 'Xenova/claude-tokenizer',
     notes: '8192 output tokens is in beta.',
     notesUrl: 'https://docs.anthropic.com/en/docs/about-claude/models',
+    legacy: true,
   },
   [ModelEnum['claude-3-5-sonnet-20241022']]: {
-    name: 'Claude 3.5 Sonnet (New)',
+    name: 'Claude 3.5 Sonnet',
     provider: AI_PROVIDERS.ANTHROPIC,
     contextWindowTokenLimit: 200000,
     outputTokenLimit: 8192,
@@ -124,6 +125,15 @@ export const ModelInfoMap: Record<ModelLike, ModelInfo> = {
     tokenizerId: 'Xenova/claude-tokenizer',
     notes: 'New version of Claude 3.5 Sonnet released on October 22, 2024.',
     notesUrl: 'https://www.anthropic.com/news/3-5-models-and-computer-use',
+  },
+  [ModelEnum['claude-3-5-haiku-20241022']]: {
+    name: 'Claude 3.5 Haiku',
+    provider: AI_PROVIDERS.ANTHROPIC,
+    contextWindowTokenLimit: 200000,
+    outputTokenLimit: 8192,
+    pricePerMillionInputTokens: 1,
+    pricePerMillionOutputTokens: 5,
+    tokenizerId: 'Xenova/claude-tokenizer',
   },
   [NonModelEnum['chatgpt']]: {
     name: 'ChatGPT',
