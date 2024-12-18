@@ -90,6 +90,7 @@ export const ModelInfoMap: Record<ModelLike, ModelInfo> = {
     notes:
       'An early preview of our o1 model, designed to reason about hard problems using broad general knowledge about the world.',
     alpha: true,
+    legacy: true,
   },
   [ModelEnum['o1-mini']]: {
     name: 'o1-mini',
@@ -102,6 +103,16 @@ export const ModelInfoMap: Record<ModelLike, ModelInfo> = {
     notes:
       "A faster and cheaper version of o1, particularly adept at coding, math, and science tasks where extensive general knowledge isn't required.",
     small: true,
+  },
+  [ModelEnum['o1']]: {
+    name: 'o1',
+    provider: AI_PROVIDERS.OPENAI,
+    contextWindowTokenLimit: 200000,
+    outputTokenLimit: 100000,
+    pricePerMillionInputTokens: 15,
+    pricePerMillionOutputTokens: 60,
+    tokenizerId: 'Xenova/gpt-4o',
+    notes: 'Reasoning model designed to solve hard problems across domains.',
   },
   [ModelEnum['claude-3-5-sonnet-20240620']]: {
     name: 'Claude 3.5 Sonnet (Old)',

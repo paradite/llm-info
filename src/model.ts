@@ -7,6 +7,7 @@ export enum ModelEnum {
   'gpt-4o-2024-08-06' = 'gpt-4o-2024-08-06',
   'o1-preview' = 'o1-preview',
   'o1-mini' = 'o1-mini',
+  'o1' = 'o1',
   'claude-3-5-sonnet-20240620' = 'claude-3-5-sonnet-20240620',
   'claude-3-5-sonnet-20241022' = 'claude-3-5-sonnet-20241022',
   'claude-3-5-haiku-20241022' = 'claude-3-5-haiku-20241022',
