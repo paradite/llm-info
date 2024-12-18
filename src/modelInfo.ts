@@ -35,6 +35,7 @@ export const ModelInfoMap: Record<ModelLike, ModelInfo> = {
     pricePerMillionInputTokens: 10,
     pricePerMillionOutputTokens: 30,
     tokenizerId: 'Xenova/gpt-4',
+    legacy: true,
   },
   [ModelEnum['gpt-4o']]: {
     name: 'GPT-4o',
@@ -78,6 +79,7 @@ export const ModelInfoMap: Record<ModelLike, ModelInfo> = {
     tokenizerId: 'Xenova/gpt-4o',
     notes:
       'This model is a version of GPT-4o that was released on August 6, 2024. It has a maximum of 16K output tokens per request.',
+    legacy: true,
   },
   [ModelEnum['o1-preview']]: {
     name: 'o1-preview',
