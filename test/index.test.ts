@@ -5,6 +5,7 @@ import {
   ModelInfoMap,
   AllModelLikes,
 } from '../src';
+
 describe('llm', () => {
   it('all models works', () => {
     console.log(AllModels);

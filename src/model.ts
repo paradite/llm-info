@@ -11,6 +11,7 @@ export enum ModelEnum {
   'claude-3-5-sonnet-20240620' = 'claude-3-5-sonnet-20240620',
   'claude-3-5-sonnet-20241022' = 'claude-3-5-sonnet-20241022',
   'claude-3-5-haiku-20241022' = 'claude-3-5-haiku-20241022',
+  'o3-mini' = 'o3-mini',
 }
 
 export enum NonModelEnum {
