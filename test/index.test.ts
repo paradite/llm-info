@@ -23,6 +23,7 @@ describe('llm', () => {
       'claude-3-5-sonnet-20241022',
       'claude-3-5-haiku-20241022',
       'o3-mini',
+      'claude-3-7-sonnet-20250219',
     ]);
   });
   it('all modellikes works', () => {
@@ -41,6 +42,7 @@ describe('llm', () => {
       'claude-3-5-sonnet-20241022',
       'claude-3-5-haiku-20241022',
       'o3-mini',
+      'claude-3-7-sonnet-20250219',
       'chatgpt',
     ]);
   });

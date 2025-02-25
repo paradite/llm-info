@@ -168,4 +168,13 @@ export const ModelInfoMap: Record<ModelLike, ModelInfo> = {
     pricePerMillionOutputTokens: 4.4,
     tokenizerId: 'Xenova/gpt-4o',
   },
+  [ModelEnum['claude-3-7-sonnet-20250219']]: {
+    name: 'Claude 3.7 Sonnet',
+    provider: AI_PROVIDERS.ANTHROPIC,
+    contextWindowTokenLimit: 200000,
+    outputTokenLimit: 8192,
+    pricePerMillionInputTokens: 3,
+    pricePerMillionOutputTokens: 15,
+    tokenizerId: 'Xenova/claude-tokenizer',
+  },
 };
