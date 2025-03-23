@@ -1,6 +1,6 @@
 {
   "name": "llm-info",
-  "version": "1.0.21",
+  "version": "1.0.22",
   "description": "Information on LLM models, context window token limit, output token limit, pricing and more",
   "homepage": "https://github.com/paradite/llm-info",
   "repository": {

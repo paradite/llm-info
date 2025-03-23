@@ -4,6 +4,8 @@ import {
   NonModelEnum,
   ModelInfoMap,
   AllModelLikes,
+  AI_PROVIDER_NAME_MAP,
+  AI_PROVIDERS,
 } from '../src';
 
 describe('llm', () => {
@@ -57,5 +59,14 @@ describe('llm', () => {
     const modelLikeInfo = ModelInfoMap[modelLike];
     console.log(modelLikeInfo);
     expect(modelLikeInfo.name).toBe('ChatGPT');
+  });
+
+  it('provider works', () => {
+    console.log(AI_PROVIDER_NAME_MAP);
+    expect(AI_PROVIDER_NAME_MAP[AI_PROVIDERS.OPENAI]).toEqual('OpenAI');
+    expect(AI_PROVIDER_NAME_MAP[AI_PROVIDERS.ANTHROPIC]).toEqual('Anthropic');
+    expect(AI_PROVIDER_NAME_MAP[AI_PROVIDERS.AZURE_OPENAI]).toEqual(
+      'Azure OpenAI'
+    );
   });
 });
