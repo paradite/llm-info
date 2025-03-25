@@ -13,6 +13,8 @@ export enum ModelEnum {
   'claude-3-5-haiku-20241022' = 'claude-3-5-haiku-20241022',
   'o3-mini' = 'o3-mini',
   'claude-3-7-sonnet-20250219' = 'claude-3-7-sonnet-20250219',
+  'deepseek-chat' = 'deepseek-chat',
+  'deepseek-reasoner' = 'deepseek-reasoner',
 }
 
 export enum NonModelEnum {
