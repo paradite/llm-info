@@ -1,19 +1,19 @@
 import { OpenAI } from 'openai';
 import { AI_PROVIDER_CONFIG, AI_PROVIDERS, ModelEnum } from '../src';
 
-describe('DeepSeek API', () => {
-  // Skip test if OPENAI_API_KEY is not set
-  const testFn = process.env.DEEPSEEK_API_KEY ? it : it.skip;
+describe('OpenRouter API', () => {
+  // Skip test if OPENROUTER_API_KEY is not set
+  const testFn = process.env.OPENROUTER_API_KEY ? it : it.skip;
 
-  const testModels = [ModelEnum['deepseek-chat']];
+  const testModels = [ModelEnum['gpt-4o-mini']];
 
   for (const model of testModels) {
     testFn(
-      `can make real API call to ${model} model`,
+      `can make real API call to ${model} model through OpenRouter`,
       async () => {
         const openai = new OpenAI({
-          baseURL: AI_PROVIDER_CONFIG[AI_PROVIDERS.DEEPSEEK].baseURL,
-          apiKey: process.env.DEEPSEEK_API_KEY,
+          baseURL: AI_PROVIDER_CONFIG[AI_PROVIDERS.OPENROUTER].baseURL,
+          apiKey: process.env.OPENROUTER_API_KEY,
         });
 
         const response = await openai.chat.completions.create({

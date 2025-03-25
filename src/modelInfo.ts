@@ -14,7 +14,6 @@ export type ModelInfo = {
   legacy?: boolean;
   alpha?: boolean;
   small?: boolean;
-  baseURL?: string;
 };
 
 export const ModelInfoMap: Record<ModelLike, ModelInfo> = {
@@ -186,7 +185,6 @@ export const ModelInfoMap: Record<ModelLike, ModelInfo> = {
     pricePerMillionInputTokens: 0.27,
     pricePerMillionOutputTokens: 1.1,
     tokenizerId: 'Xenova/gpt-4o',
-    baseURL: 'https://api.deepseek.com',
   },
   [ModelEnum['deepseek-reasoner']]: {
     name: 'DeepSeek-R1',
@@ -196,6 +194,5 @@ export const ModelInfoMap: Record<ModelLike, ModelInfo> = {
     pricePerMillionInputTokens: 0.55,
     pricePerMillionOutputTokens: 2.19,
     tokenizerId: 'Xenova/gpt-4o',
-    baseURL: 'https://api.deepseek.com',
   },
 };
