@@ -15,6 +15,7 @@ export enum ModelEnum {
   'claude-3-7-sonnet-20250219' = 'claude-3-7-sonnet-20250219',
   'deepseek-chat' = 'deepseek-chat',
   'deepseek-reasoner' = 'deepseek-reasoner',
+  'gemini-2.5-pro-exp-03-25' = 'gemini-2.5-pro-exp-03-25',
 }
 
 export enum NonModelEnum {

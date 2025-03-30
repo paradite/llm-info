@@ -14,6 +14,7 @@ export type ModelInfo = {
   legacy?: boolean;
   alpha?: boolean;
   small?: boolean;
+  reasoning?: boolean;
 };
 
 export const ModelInfoMap: Record<ModelLike, ModelInfo> = {
@@ -106,6 +107,7 @@ export const ModelInfoMap: Record<ModelLike, ModelInfo> = {
       "A faster and cheaper version of o1, particularly adept at coding, math, and science tasks where extensive general knowledge isn't required.",
     small: true,
     legacy: true,
+    reasoning: true,
   },
   [ModelEnum['o1']]: {
     name: 'o1',
@@ -117,6 +119,7 @@ export const ModelInfoMap: Record<ModelLike, ModelInfo> = {
     tokenizerId: 'Xenova/gpt-4o',
     notes: 'Reasoning model designed to solve hard problems across domains.',
     legacy: true,
+    reasoning: true,
   },
   [ModelEnum['claude-3-5-sonnet-20240620']]: {
     name: 'Claude 3.5 Sonnet (Old)',
@@ -149,6 +152,7 @@ export const ModelInfoMap: Record<ModelLike, ModelInfo> = {
     pricePerMillionInputTokens: 1,
     pricePerMillionOutputTokens: 5,
     tokenizerId: 'Xenova/claude-tokenizer',
+    legacy: true,
   },
   [NonModelEnum['chatgpt']]: {
     name: 'ChatGPT',
@@ -167,6 +171,7 @@ export const ModelInfoMap: Record<ModelLike, ModelInfo> = {
     pricePerMillionInputTokens: 1.1,
     pricePerMillionOutputTokens: 4.4,
     tokenizerId: 'Xenova/gpt-4o',
+    reasoning: true,
   },
   [ModelEnum['claude-3-7-sonnet-20250219']]: {
     name: 'Claude 3.7 Sonnet',
@@ -194,5 +199,16 @@ export const ModelInfoMap: Record<ModelLike, ModelInfo> = {
     pricePerMillionInputTokens: 0.55,
     pricePerMillionOutputTokens: 2.19,
     tokenizerId: 'Xenova/gpt-4o',
+    reasoning: true,
+  },
+  [ModelEnum['gemini-2.5-pro-exp-03-25']]: {
+    name: 'Gemini 2.5 Pro Experimental',
+    provider: AI_PROVIDERS.GOOGLE,
+    contextWindowTokenLimit: 1048576,
+    outputTokenLimit: 65536,
+    pricePerMillionInputTokens: 0,
+    pricePerMillionOutputTokens: 0,
+    tokenizerId: 'Xenova/gpt-4o',
+    notes: 'This is an experimental model that is currently free to test.',
   },
 };
