@@ -210,5 +210,6 @@ export const ModelInfoMap: Record<ModelLike, ModelInfo> = {
     pricePerMillionOutputTokens: 0,
     tokenizerId: 'Xenova/gpt-4o',
     notes: 'This is an experimental model that is currently free to test.',
+    reasoning: true,
   },
 };
