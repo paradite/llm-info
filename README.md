@@ -20,13 +20,30 @@ Models included:
 - GPT-4o
 - GPT-4o mini
 - GPT-4o Long Output
+- GPT-4o 08-06
 - o1
+- o1-mini
+- o1-preview
+- o3-mini
 - Claude 3.5 Sonnet
-- ... and more new models
+- Claude 3.5 Haiku
+- Claude 3.7 Sonnet
+- DeepSeek-V3
+- DeepSeek-R1
+- Gemini 2.5 Pro Experimental
 
 Non-models (model-like) included:
 
 - ChatGPT
+
+Providers supported:
+
+- OpenAI
+- Anthropic
+- Azure OpenAI
+- DeepSeek
+- OpenRouter
+- Google
 
 ## Install:
 
@@ -44,24 +61,22 @@ console.log(AllModels);
 /*
 [
   'gpt-4',
-  'gpt-4o',
   'gpt-4-turbo',
+  'gpt-4o',
   'gpt-4o-64k-output-alpha',
   'gpt-4o-mini',
-  'claude-3-5-sonnet-20240620'
-]
-*/
-
-console.log(AllModelLikes);
-/*
-[
-  'gpt-4',
-  'gpt-4o',
-  'gpt-4-turbo',
-  'gpt-4o-64k-output-alpha',
-  'gpt-4o-mini',
+  'gpt-4o-2024-08-06',
+  'o1-preview',
+  'o1-mini',
+  'o1',
   'claude-3-5-sonnet-20240620',
-  'chatgpt'
+  'claude-3-5-sonnet-20241022',
+  'claude-3-5-haiku-20241022',
+  'o3-mini',
+  'claude-3-7-sonnet-20250219',
+  'deepseek-chat',
+  'deepseek-reasoner',
+  'gemini-2.5-pro-exp-03-25'
 ]
 */
 
@@ -77,6 +92,21 @@ console.log(modelInfo);
   pricePerMillionInputTokens: 5,
   pricePerMillionOutputTokens: 15,
   tokenizerId: 'Xenova/gpt-4o'
+}
+*/
+
+// Providers
+import { AI_PROVIDER_NAME_MAP } from 'llm-info';
+
+console.log(AI_PROVIDER_NAME_MAP);
+/*
+{
+  openai: 'OpenAI',
+  anthropic: 'Anthropic',
+  'azure-openai': 'Azure OpenAI',
+  deepseek: 'DeepSeek',
+  openrouter: 'OpenRouter',
+  google: 'Google'
 }
 */
 
