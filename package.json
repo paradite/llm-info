@@ -5,7 +5,7 @@
   "homepage": "https://prompt.16x.engineer/",
   "repository": {
     "type": "git",
-    "url": "git@github.com:paradite/llm-info.git"
+    "url": "git+ssh://git@github.com/paradite/llm-info.git"
   },
   "main": "dist/index.js",
   "type": "module",
