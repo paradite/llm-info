@@ -34,7 +34,18 @@
     "token",
     "context-window",
     "pricing",
-    "token-limit"
+    "token-limit",
+    "provider",
+    "gpt",
+    "claude",
+    "gemini",
+    "deepseek",
+    "openai",
+    "anthropic",
+    "azure-openai",
+    "deepseek",
+    "openrouter",
+    "google"
   ],
   "devDependencies": {
     "@types/jest": "^29.5.12",
