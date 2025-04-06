@@ -15,6 +15,7 @@ export type ModelInfo = {
   alpha?: boolean;
   small?: boolean;
   reasoning?: boolean;
+  recommendedForCoding?: boolean;
 };
 
 export const ModelInfoMap: Record<ModelLike, ModelInfo> = {
@@ -46,6 +47,7 @@ export const ModelInfoMap: Record<ModelLike, ModelInfo> = {
     pricePerMillionInputTokens: 5,
     pricePerMillionOutputTokens: 15,
     tokenizerId: 'Xenova/gpt-4o',
+    recommendedForCoding: true,
   },
   [ModelEnum['gpt-4o-mini']]: {
     name: 'GPT-4o mini',
@@ -143,6 +145,7 @@ export const ModelInfoMap: Record<ModelLike, ModelInfo> = {
     tokenizerId: 'Xenova/claude-tokenizer',
     notes: 'New version of Claude 3.5 Sonnet released on October 22, 2024.',
     notesUrl: 'https://www.anthropic.com/news/3-5-models-and-computer-use',
+    recommendedForCoding: true,
   },
   [ModelEnum['claude-3-5-haiku-20241022']]: {
     name: 'Claude 3.5 Haiku',
@@ -181,6 +184,7 @@ export const ModelInfoMap: Record<ModelLike, ModelInfo> = {
     pricePerMillionInputTokens: 3,
     pricePerMillionOutputTokens: 15,
     tokenizerId: 'Xenova/claude-tokenizer',
+    recommendedForCoding: true,
   },
   [ModelEnum['deepseek-chat']]: {
     name: 'DeepSeek-V3 (New)',
@@ -190,6 +194,7 @@ export const ModelInfoMap: Record<ModelLike, ModelInfo> = {
     pricePerMillionInputTokens: 0.27,
     pricePerMillionOutputTokens: 1.1,
     tokenizerId: 'Xenova/gpt-4o',
+    recommendedForCoding: true,
   },
   [ModelEnum['deepseek-reasoner']]: {
     name: 'DeepSeek-R1',
@@ -211,5 +216,19 @@ export const ModelInfoMap: Record<ModelLike, ModelInfo> = {
     tokenizerId: 'Xenova/gpt-4o',
     notes: 'This is an experimental model that is currently free to test.',
     reasoning: true,
+    recommendedForCoding: true,
+  },
+  [ModelEnum['gemini-2.5-pro-preview-03-25']]: {
+    name: 'Gemini 2.5 Pro Preview',
+    provider: AI_PROVIDERS.GOOGLE,
+    contextWindowTokenLimit: 1048576,
+    outputTokenLimit: 65536,
+    pricePerMillionInputTokens: 2.5,
+    pricePerMillionOutputTokens: 15,
+    tokenizerId: 'Xenova/gpt-4o',
+    notes: 'The pricing is for prompt with context length > 200k tokens',
+    notesUrl: 'https://ai.google.dev/gemini-api/docs/pricing',
+    reasoning: true,
+    recommendedForCoding: true,
   },
 };
