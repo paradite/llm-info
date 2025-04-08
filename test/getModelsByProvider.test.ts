@@ -1,4 +1,4 @@
-import { getModelsByProvider, AI_PROVIDERS } from '../src';
+import { AI_PROVIDERS, getModelsByProvider } from '../src';
 
 describe('getModelsByProvider', () => {
   it('should return OpenAI models from ModelInfoMap', async () => {
