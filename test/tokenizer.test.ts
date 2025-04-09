@@ -1,4 +1,4 @@
-import { AllModels, ModelInfoMap } from '../src';
+import { AllModels, ModelInfoMap, getModelInfoWithId, ModelEnum } from '../src';
 import { AutoTokenizer } from '@xenova/transformers';
 
 describe('llm', () => {
@@ -20,4 +20,12 @@ describe('llm', () => {
     }
     console.log(`Test sentence: ${testSentence}\n${results.join('\n')}`);
   }, 10000);
+
+  it('model info with id works', () => {
+    // Test that we can get model info with ID
+    const modelInfoWithId = getModelInfoWithId(ModelEnum['gpt-4o']);
+    expect(modelInfoWithId.id).toBe('gpt-4o');
+    expect(modelInfoWithId.name).toBe('GPT-4o');
+    expect(modelInfoWithId.tokenizerId).toBe('Xenova/gpt-4o');
+  });
 });

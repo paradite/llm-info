@@ -6,6 +6,8 @@ import {
   AllModelLikes,
   AI_PROVIDER_NAME_MAP,
   AI_PROVIDERS,
+  getModelInfoWithId,
+  getAllModelsWithIds,
 } from '../src';
 
 describe('llm', () => {
@@ -23,6 +25,7 @@ describe('llm', () => {
     expect(AllModelLikes).toContain('gemini-2.5-pro-exp-03-25');
   });
   it('info works', () => {
+    // Test with ModelInfoMap (without id)
     const modelInfo = ModelInfoMap['gpt-4o'];
     console.log(modelInfo);
     expect(modelInfo.name).toBe('GPT-4o');
@@ -33,6 +36,18 @@ describe('llm', () => {
     const modelLikeInfo = ModelInfoMap[modelLike];
     console.log(modelLikeInfo);
     expect(modelLikeInfo.name).toBe('ChatGPT');
+
+    // Test with getModelInfoWithId (with id)
+    const modelInfoWithId = getModelInfoWithId(ModelEnum['gpt-4o']);
+    console.log(modelInfoWithId);
+    expect(modelInfoWithId.name).toBe('GPT-4o');
+    expect(modelInfoWithId.id).toBe('gpt-4o');
+
+    // Test with getAllModelsWithIds
+    const allModelsWithIds = getAllModelsWithIds();
+    console.log('All models with IDs:', allModelsWithIds.length);
+    expect(allModelsWithIds.length).toBeGreaterThan(0);
+    expect(allModelsWithIds[0].id).toBeTruthy();
   });
 
   it('provider works', () => {

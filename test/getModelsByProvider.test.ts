@@ -13,12 +13,20 @@ describe('getModelsByProvider', () => {
       expect(model.name).toBeTruthy();
       expect(model.contextWindowTokenLimit).toBeGreaterThan(0);
       expect(model.outputTokenLimit).toBeGreaterThan(0);
+      expect(model.id).toBeTruthy();
     });
 
     // Check that we have specific OpenAI models
     const modelNames = models.map((model) => model.name);
     expect(modelNames).toContain('GPT-4');
     expect(modelNames).toContain('GPT-4o');
+
+    // Check that model IDs match their names
+    const gpt4Model = models.find((model) => model.name === 'GPT-4');
+    expect(gpt4Model).toBeTruthy();
+    if (gpt4Model) {
+      expect(gpt4Model.id).toBe('gpt-4');
+    }
   });
 
   it('should return OpenRouter models from API', async () => {
@@ -45,6 +53,8 @@ describe('getModelsByProvider', () => {
       expect(gpt4oModel.contextWindowTokenLimit).toBeGreaterThan(0);
       expect(gpt4oModel.pricePerMillionInputTokens).toBeGreaterThan(0);
       expect(gpt4oModel.tokenizerId).toBe('Xenova/gpt-4');
+      expect(gpt4oModel.id).toBeTruthy();
+      expect(gpt4oModel.id).toContain('openai');
     }
 
     // Check for Claude model
@@ -57,6 +67,8 @@ describe('getModelsByProvider', () => {
       expect(claudeModel.contextWindowTokenLimit).toBeGreaterThan(0);
       expect(claudeModel.pricePerMillionInputTokens).toBeGreaterThan(0);
       expect(claudeModel.tokenizerId).toBe('Xenova/claude-tokenizer');
+      expect(claudeModel.id).toBeTruthy();
+      expect(claudeModel.id).toContain('anthropic');
     }
 
     // Log some model info for debugging

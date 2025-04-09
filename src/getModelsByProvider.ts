@@ -1,5 +1,5 @@
 import { ModelInfo } from './modelInfo';
-import { ModelInfoMap } from './ModelInfoMap';
+import { getAllModelsWithIds } from './ModelInfoMap';
 import { AI_PROVIDER_TYPE, AI_PROVIDERS } from './provider';
 
 export type OpenRouterModelResponse = {
@@ -56,6 +56,7 @@ export function convertOpenRouterModelToModelInfo(
   return {
     name: model.name,
     provider: providerId,
+    id: model.id,
     contextWindowTokenLimit: model.context_length,
     outputTokenLimit: null,
     pricePerMillionInputTokens: promptPrice,
@@ -84,7 +85,6 @@ export async function getOpenRouterModels(): Promise<OpenRouterModelResponse> {
  * @param provider The AI provider to get models from
  * @returns Promise with an array of ModelInfo objects for the specified provider
  */
-
 export async function getModelsByProvider(
   provider: AI_PROVIDER_TYPE
 ): Promise<ModelInfo[]> {
@@ -105,8 +105,6 @@ export async function getModelsByProvider(
     }
   }
 
-  // For other providers, use the local ModelInfoMap
-  return Object.entries(ModelInfoMap)
-    .filter(([_, modelInfo]) => modelInfo.provider === provider)
-    .map(([_, modelInfo]) => modelInfo);
+  // For other providers, use the local ModelInfoMap with IDs
+  return getAllModelsWithIds().filter((model) => model.provider === provider);
 }

@@ -2,7 +2,15 @@ import { ModelLike, ModelEnum, NonModelEnum } from './model';
 import { ModelInfo } from './modelInfo';
 import { AI_PROVIDERS } from './provider';
 
-export const ModelInfoMap: Record<ModelLike, ModelInfo> = {
+// Helper function to create ModelInfo with ID
+function createModelInfo(id: string, info: Omit<ModelInfo, 'id'>): ModelInfo {
+  return {
+    ...info,
+    id,
+  };
+}
+
+export const ModelInfoMap: Record<ModelLike, Omit<ModelInfo, 'id'>> = {
   [ModelEnum['gpt-4']]: {
     name: 'GPT-4',
     provider: AI_PROVIDERS.OPENAI,
@@ -216,3 +224,15 @@ export const ModelInfoMap: Record<ModelLike, ModelInfo> = {
     recommendedForCoding: true,
   },
 };
+
+// Function to get ModelInfo with ID
+export function getModelInfoWithId(id: ModelLike): ModelInfo {
+  return createModelInfo(id, ModelInfoMap[id]);
+}
+
+// Function to get all models with IDs
+export function getAllModelsWithIds(): ModelInfo[] {
+  return Object.entries(ModelInfoMap).map(([id, info]) =>
+    createModelInfo(id, info)
+  );
+}

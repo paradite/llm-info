@@ -3,6 +3,7 @@ import { AI_PROVIDER_TYPE } from './provider';
 export type ModelInfo = {
   name: string;
   provider: AI_PROVIDER_TYPE;
+  id: string;
   contextWindowTokenLimit: number;
   outputTokenLimit: number | null;
   pricePerMillionInputTokens: number | null;
