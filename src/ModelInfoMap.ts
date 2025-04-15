@@ -39,7 +39,7 @@ export const ModelInfoMap: Record<ModelLike, Omit<ModelInfo, 'id'>> = {
     pricePerMillionInputTokens: 5,
     pricePerMillionOutputTokens: 15,
     tokenizerId: 'Xenova/gpt-4o',
-    recommendedForCoding: true,
+    legacy: true,
   },
   [ModelEnum['gpt-4o-mini']]: {
     name: 'GPT-4o mini',
