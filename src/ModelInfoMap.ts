@@ -223,6 +223,41 @@ export const ModelInfoMap: Record<ModelLike, Omit<ModelInfo, 'id'>> = {
     reasoning: true,
     recommendedForCoding: true,
   },
+  [ModelEnum['gpt-4.1']]: {
+    name: 'GPT-4.1',
+    provider: AI_PROVIDERS.OPENAI,
+    contextWindowTokenLimit: 1047576,
+    outputTokenLimit: 32768,
+    pricePerMillionInputTokens: 2,
+    pricePerMillionOutputTokens: 8,
+    tokenizerId: 'Xenova/gpt-4o',
+    notes:
+      'GPT-4.1 is a flagship model for complex tasks. It is well suited for problem solving across domains. Knowledge cutoff: Jun 01, 2024.',
+    recommendedForCoding: true,
+  },
+  [ModelEnum['gpt-4.1-mini']]: {
+    name: 'GPT-4.1 mini',
+    provider: AI_PROVIDERS.OPENAI,
+    contextWindowTokenLimit: 1047576,
+    outputTokenLimit: 32768,
+    pricePerMillionInputTokens: 0.4,
+    pricePerMillionOutputTokens: 1.6,
+    tokenizerId: 'Xenova/gpt-4o',
+    notes:
+      'GPT-4.1 mini provides a balance between intelligence, speed, and cost that makes it an attractive model for many use cases.',
+    small: true,
+  },
+  [ModelEnum['gpt-4.1-nano']]: {
+    name: 'GPT-4.1 nano',
+    provider: AI_PROVIDERS.OPENAI,
+    contextWindowTokenLimit: 1047576,
+    outputTokenLimit: 32768,
+    pricePerMillionInputTokens: 0.1,
+    pricePerMillionOutputTokens: 0.4,
+    tokenizerId: 'Xenova/gpt-4o',
+    notes: 'GPT-4.1 nano is the fastest, most cost-effective GPT-4.1 model.',
+    small: true,
+  },
 };
 
 // Function to get ModelInfo with ID

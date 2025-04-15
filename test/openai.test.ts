@@ -1,10 +1,10 @@
 import { OpenAI } from 'openai';
-
+import { ModelEnum } from '../src';
 describe('OpenAI API', () => {
   // Skip test if OPENAI_API_KEY is not set
   const testFn = process.env.OPENAI_API_KEY ? it : it.skip;
 
-  const testModels = ['gpt-4o'];
+  const testModels = [ModelEnum['gpt-4.1']];
 
   for (const model of testModels) {
     testFn(
