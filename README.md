@@ -19,8 +19,9 @@ Models included:
 - GPT-4 Turbo
 - GPT-4o
 - GPT-4o mini
-- GPT-4o Long Output
-- GPT-4o 08-06
+- GPT-4.1
+- GPT-4.1 mini
+- GPT-4.1 nano
 - o1
 - o1-mini
 - o1-preview
