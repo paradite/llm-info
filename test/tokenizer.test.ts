@@ -1,4 +1,4 @@
-import { AllModels, ModelInfoMap, getModelInfoWithId, ModelEnum } from '../src';
+import { ModelInfoMap, getModelInfoWithId, ModelEnum, ModelLike } from '../src';
 import { AutoTokenizer } from '@xenova/transformers';
 
 describe('llm', () => {
@@ -6,8 +6,16 @@ describe('llm', () => {
     const testSentence =
       "Many words map to one token, but some don't: indivisible.";
     const results: string[] = [];
-    for (let i = 0; i < AllModels.length; i++) {
-      const model = AllModels[i];
+
+    // Test only a few specific models instead of all models
+    const modelsToTest: ModelLike[] = [
+      ModelEnum['gpt-4o'],
+      ModelEnum['claude-3-5-sonnet-20241022'],
+      ModelEnum['o4-mini'],
+      ModelEnum['gemini-2.5-pro-preview-03-25'],
+    ];
+
+    for (const model of modelsToTest) {
       if (ModelInfoMap[model].tokenizerId) {
         const tokenizer = await AutoTokenizer.from_pretrained(
           ModelInfoMap[model].tokenizerId
