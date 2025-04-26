@@ -40,6 +40,7 @@ export const ModelInfoMap: Record<ModelLike, Omit<ModelInfo, 'id'>> = {
     pricePerMillionOutputTokens: 15,
     tokenizerId: 'Xenova/gpt-4o',
     legacy: true,
+    supportsImageInput: true,
   },
   [ModelEnum['gpt-4o-mini']]: {
     name: 'GPT-4o mini',
@@ -50,6 +51,7 @@ export const ModelInfoMap: Record<ModelLike, Omit<ModelInfo, 'id'>> = {
     pricePerMillionOutputTokens: 0.6,
     tokenizerId: 'Xenova/gpt-4o',
     small: true,
+    supportsImageInput: true,
   },
   [ModelEnum['gpt-4o-64k-output-alpha']]: {
     name: 'GPT-4o Long Output',
@@ -63,6 +65,7 @@ export const ModelInfoMap: Record<ModelLike, Omit<ModelInfo, 'id'>> = {
     notes:
       'OpenAI is offering an experimental version of GPT-4o with a maximum of 64K output tokens per request.',
     notesUrl: 'https://openai.com/gpt-4o-long-output/',
+    supportsImageInput: true,
   },
   [ModelEnum['gpt-4o-2024-08-06']]: {
     name: 'GPT-4o 08-06',
@@ -75,6 +78,7 @@ export const ModelInfoMap: Record<ModelLike, Omit<ModelInfo, 'id'>> = {
     notes:
       'This model is a version of GPT-4o that was released on August 6, 2024. It has a maximum of 16K output tokens per request.',
     legacy: true,
+    supportsImageInput: true,
   },
   [ModelEnum['gpt-4.1']]: {
     name: 'GPT-4.1',
@@ -87,6 +91,7 @@ export const ModelInfoMap: Record<ModelLike, Omit<ModelInfo, 'id'>> = {
     notes:
       'GPT-4.1 is a flagship model for complex tasks. It is well suited for problem solving across domains. Knowledge cutoff: Jun 01, 2024.',
     recommendedForCoding: true,
+    supportsImageInput: true,
   },
   [ModelEnum['gpt-4.1-mini']]: {
     name: 'GPT-4.1 mini',
@@ -149,6 +154,7 @@ export const ModelInfoMap: Record<ModelLike, Omit<ModelInfo, 'id'>> = {
     notes: 'Reasoning model designed to solve hard problems across domains.',
     legacy: true,
     reasoning: true,
+    supportsImageInput: true,
   },
   [ModelEnum['o3']]: {
     name: 'o3',
@@ -160,6 +166,7 @@ export const ModelInfoMap: Record<ModelLike, Omit<ModelInfo, 'id'>> = {
     tokenizerId: 'Xenova/gpt-4o',
     notes: 'o3 is a well-rounded and powerful model across domains.',
     reasoning: true,
+    supportsImageInput: true,
   },
   [ModelEnum['o3-mini']]: {
     name: 'o3-mini',
@@ -196,6 +203,7 @@ export const ModelInfoMap: Record<ModelLike, Omit<ModelInfo, 'id'>> = {
     notes: '8192 output tokens is in beta.',
     notesUrl: 'https://docs.anthropic.com/en/docs/about-claude/models',
     legacy: true,
+    supportsImageInput: true,
   },
   [ModelEnum['claude-3-5-sonnet-20241022']]: {
     name: 'Claude 3.5 Sonnet',
@@ -208,6 +216,7 @@ export const ModelInfoMap: Record<ModelLike, Omit<ModelInfo, 'id'>> = {
     notes: 'New version of Claude 3.5 Sonnet released on October 22, 2024.',
     notesUrl: 'https://www.anthropic.com/news/3-5-models-and-computer-use',
     recommendedForCoding: true,
+    supportsImageInput: true,
   },
   [ModelEnum['claude-3-5-haiku-20241022']]: {
     name: 'Claude 3.5 Haiku',
@@ -218,6 +227,7 @@ export const ModelInfoMap: Record<ModelLike, Omit<ModelInfo, 'id'>> = {
     pricePerMillionOutputTokens: 5,
     tokenizerId: 'Xenova/claude-tokenizer',
     legacy: true,
+    supportsImageInput: true,
   },
   [NonModelEnum['chatgpt']]: {
     name: 'ChatGPT',
@@ -237,6 +247,7 @@ export const ModelInfoMap: Record<ModelLike, Omit<ModelInfo, 'id'>> = {
     pricePerMillionOutputTokens: 15,
     tokenizerId: 'Xenova/claude-tokenizer',
     recommendedForCoding: true,
+    supportsImageInput: true,
   },
   [ModelEnum['deepseek-chat']]: {
     name: 'DeepSeek-V3 (New)',
@@ -247,6 +258,7 @@ export const ModelInfoMap: Record<ModelLike, Omit<ModelInfo, 'id'>> = {
     pricePerMillionOutputTokens: 1.1,
     tokenizerId: 'Xenova/gpt-4o',
     recommendedForCoding: true,
+    supportsImageInput: false,
   },
   [ModelEnum['deepseek-reasoner']]: {
     name: 'DeepSeek-R1',
@@ -257,6 +269,7 @@ export const ModelInfoMap: Record<ModelLike, Omit<ModelInfo, 'id'>> = {
     pricePerMillionOutputTokens: 2.19,
     tokenizerId: 'Xenova/gpt-4o',
     reasoning: true,
+    supportsImageInput: false,
   },
   [ModelEnum['gemini-2.5-pro-exp-03-25']]: {
     name: 'Gemini 2.5 Pro Experimental',
@@ -269,6 +282,7 @@ export const ModelInfoMap: Record<ModelLike, Omit<ModelInfo, 'id'>> = {
     notes: 'This is an experimental model that is currently free to test.',
     reasoning: true,
     recommendedForCoding: true,
+    supportsImageInput: true,
   },
   [ModelEnum['gemini-2.5-pro-preview-03-25']]: {
     name: 'Gemini 2.5 Pro Preview',
@@ -282,6 +296,7 @@ export const ModelInfoMap: Record<ModelLike, Omit<ModelInfo, 'id'>> = {
     notesUrl: 'https://ai.google.dev/gemini-api/docs/pricing',
     reasoning: true,
     recommendedForCoding: true,
+    supportsImageInput: true,
   },
 };
 

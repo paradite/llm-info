@@ -16,4 +16,5 @@ export type ModelInfo = {
   small?: boolean;
   reasoning?: boolean;
   recommendedForCoding?: boolean;
+  supportsImageInput?: boolean;
 };
