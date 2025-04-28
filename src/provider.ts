@@ -39,7 +39,7 @@ export const AI_PROVIDER_CONFIG: Record<
   [AI_PROVIDERS.AZURE_OPENAI]: {
     name: 'Azure OpenAI',
     firstParty: false,
-    baseURL: 'https://api.openai.azure.com',
+    baseURL: 'https://<your-resource-name>.openai.azure.com/',
     website:
       'https://azure.microsoft.com/en-us/products/ai-services/openai-service',
   },
