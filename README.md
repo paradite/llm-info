@@ -5,15 +5,16 @@
 
 Information on LLM models, context window token limit, output token limit, pricing and more, developed by [16x Prompt](https://prompt.16x.engineer/) team.
 
-Information provided includes:
+## Information provided
 
 - context window token limit
 - output token limit
 - pricing
+- image input support
 - `tokenizerId` for loading tokenizer from `@xenova/transformers`
 - and more
 
-Models included:
+## Models included
 
 - GPT-4
 - GPT-4 Turbo
@@ -37,14 +38,20 @@ Non-models (model-like) included:
 
 - ChatGPT
 
-Providers supported:
+## Providers supported
+
+First-party providers:
 
 - OpenAI
 - Anthropic
 - Azure OpenAI
 - DeepSeek
-- OpenRouter
 - Google
+
+Third-party providers:
+
+- OpenRouter
+- Fireworks
 
 ## Install:
 
