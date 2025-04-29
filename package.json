@@ -1,8 +1,8 @@
 {
   "name": "llm-info",
-  "version": "1.0.40",
+  "version": "1.0.41",
   "description": "Information on LLM models, context window token limit, output token limit, pricing and more",
-  "homepage": "https://prompt.16x.engineer/",
+  "homepage": "https://eval.16x.engineer/",
   "repository": {
     "type": "git",
     "url": "git+ssh://git@github.com/paradite/llm-info.git"
@@ -31,6 +31,8 @@
     "language model",
     "model",
     "info",
+    "eval",
+    "prompt",
     "token",
     "context-window",
     "pricing",
@@ -45,7 +47,8 @@
     "azure-openai",
     "deepseek",
     "openrouter",
-    "google"
+    "google",
+    "fireworks"
   ],
   "devDependencies": {
     "@types/jest": "^29.5.12",

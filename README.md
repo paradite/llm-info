@@ -3,7 +3,7 @@
 [![NPM version](https://img.shields.io/npm/v/llm-info.svg?style=flat-square)](https://npmjs.org/package/llm-info)
 [![CI](https://github.com/paradite/llm-info/actions/workflows/node.js.yml/badge.svg)](https://github.com/paradite/llm-info/actions/workflows/node.js.yml)
 
-Information on LLM models, context window token limit, output token limit, pricing and more, developed by [16x Prompt](https://prompt.16x.engineer/) team.
+Information on LLM models, context window token limit, output token limit, pricing and more, developed by [16x Prompt](https://prompt.16x.engineer/) and [16x Eval](https://eval.16x.engineer/) team.
 
 ## Information provided
 
