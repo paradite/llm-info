@@ -242,7 +242,7 @@ export const ModelInfoMap: Record<ModelLike, Omit<ModelInfo, 'id'>> = {
     name: 'Claude 3.7 Sonnet',
     provider: AI_PROVIDERS.ANTHROPIC,
     contextWindowTokenLimit: 200000,
-    outputTokenLimit: 8192,
+    outputTokenLimit: 64000,
     pricePerMillionInputTokens: 3,
     pricePerMillionOutputTokens: 15,
     tokenizerId: 'Xenova/claude-tokenizer',
