@@ -298,6 +298,20 @@ export const ModelInfoMap: Record<ModelLike, Omit<ModelInfo, 'id'>> = {
     recommendedForCoding: true,
     supportsImageInput: true,
   },
+  [ModelEnum['gemini-2.5-pro-preview-05-06']]: {
+    name: 'Gemini 2.5 Pro Preview (New)',
+    provider: AI_PROVIDERS.GOOGLE,
+    contextWindowTokenLimit: 1048576,
+    outputTokenLimit: 65536,
+    pricePerMillionInputTokens: 2.5,
+    pricePerMillionOutputTokens: 15,
+    tokenizerId: 'Xenova/gpt-4o',
+    notes: 'The pricing is for prompt with context length > 200k tokens',
+    notesUrl: 'https://ai.google.dev/gemini-api/docs/pricing',
+    reasoning: true,
+    recommendedForCoding: true,
+    supportsImageInput: true,
+  },
 };
 
 // Function to get ModelInfo with ID
