@@ -51,6 +51,7 @@
     "fireworks"
   ],
   "devDependencies": {
+    "@google/genai": "^0.13.0",
     "@types/jest": "^29.5.12",
     "@xenova/transformers": "^2.17.2",
     "jest": "^29.7.0",
