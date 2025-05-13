@@ -33,6 +33,7 @@ Information on LLM models, context window token limit, output token limit, prici
 - DeepSeek-V3
 - DeepSeek-R1
 - Gemini 2.5 Pro Experimental
+- .. and more
 
 Non-models (model-like) included:
 
@@ -114,7 +115,53 @@ console.log(AI_PROVIDER_NAME_MAP);
   'azure-openai': 'Azure OpenAI',
   deepseek: 'DeepSeek',
   openrouter: 'OpenRouter',
-  google: 'Google'
+  google: 'Google',
+  fireworks: 'Fireworks'
+}
+*/
+
+// Provider Configuration
+import { AI_PROVIDER_CONFIG, AI_PROVIDERS } from 'llm-info';
+
+console.log(AI_PROVIDER_CONFIG);
+/*
+{
+  openai: {
+    name: 'OpenAI',
+    firstParty: true
+  },
+  anthropic: {
+    name: 'Anthropic',
+    firstParty: true
+  },
+  'azure-openai': {
+    name: 'Azure OpenAI',
+    firstParty: false,
+    baseURL: 'https://<your-resource-name>.openai.azure.com/',
+    website: 'https://azure.microsoft.com/en-us/products/ai-services/openai-service'
+  },
+  deepseek: {
+    name: 'DeepSeek',
+    firstParty: true,
+    baseURL: 'https://api.deepseek.com'
+  },
+  openrouter: {
+    name: 'OpenRouter',
+    firstParty: false,
+    baseURL: 'https://openrouter.ai/api/v1',
+    website: 'https://openrouter.ai'
+  },
+  google: {
+    name: 'Google',
+    firstParty: true,
+    baseURL: 'https://generativelanguage.googleapis.com/v1beta/openai/'
+  },
+  fireworks: {
+    name: 'Fireworks',
+    firstParty: false,
+    baseURL: 'https://api.fireworks.ai/inference/v1',
+    website: 'https://fireworks.ai'
+  }
 }
 */
 
