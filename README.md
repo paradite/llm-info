@@ -5,6 +5,11 @@
 
 Information on LLM models, context window token limit, output token limit, pricing and more, developed by [16x Prompt](https://prompt.16x.engineer/) and [16x Eval](https://eval.16x.engineer/) team.
 
+Related projects:
+
+- [send-prompt](https://github.com/paradite/send-prompt): A unified TypeScript library for AI model interactions with standardized interfaces and function calling.
+- [ai-file-edit](https://github.com/paradite/ai-file-edit): A library for editing files using AI models such as GPT, Claude, and Gemini.
+
 ## Information provided
 
 - context window token limit
