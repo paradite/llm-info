@@ -1,16 +1,22 @@
 import { ModelLike, ModelEnum, NonModelEnum } from './model';
-import { ModelInfo } from './modelInfo';
+import { ModelInfo, ModelInfoCurrent, ModelInfoLegacy } from './modelInfo';
 import { AI_PROVIDERS } from './provider';
 
 // Helper function to create ModelInfo with ID
-function createModelInfo(id: string, info: Omit<ModelInfo, 'id'>): ModelInfo {
+function createModelInfo(
+  id: string,
+  info: Omit<ModelInfoCurrent, 'id'> | Omit<ModelInfoLegacy, 'id'>
+): ModelInfo {
   return {
     ...info,
     id,
   };
 }
 
-export const ModelInfoMap: Record<ModelLike, Omit<ModelInfo, 'id'>> = {
+export const ModelInfoMap: Record<
+  ModelLike,
+  Omit<ModelInfoCurrent, 'id'> | Omit<ModelInfoLegacy, 'id'>
+> = {
   [ModelEnum['gpt-4']]: {
     name: 'GPT-4',
     provider: AI_PROVIDERS.OPENAI,
@@ -20,6 +26,7 @@ export const ModelInfoMap: Record<ModelLike, Omit<ModelInfo, 'id'>> = {
     pricePerMillionOutputTokens: 60,
     tokenizerId: 'Xenova/gpt-4',
     legacy: true,
+    legacyReason: 'Superceded by GPT-4o',
   },
   [ModelEnum['gpt-4-turbo']]: {
     name: 'GPT-4 Turbo',
@@ -30,6 +37,7 @@ export const ModelInfoMap: Record<ModelLike, Omit<ModelInfo, 'id'>> = {
     pricePerMillionOutputTokens: 30,
     tokenizerId: 'Xenova/gpt-4',
     legacy: true,
+    legacyReason: 'Superceded by GPT-4o',
   },
   [ModelEnum['gpt-4o']]: {
     name: 'GPT-4o',
@@ -39,8 +47,8 @@ export const ModelInfoMap: Record<ModelLike, Omit<ModelInfo, 'id'>> = {
     pricePerMillionInputTokens: 5,
     pricePerMillionOutputTokens: 15,
     tokenizerId: 'Xenova/gpt-4o',
-    legacy: true,
     supportsImageInput: true,
+    legacy: false,
   },
   [ModelEnum['gpt-4o-mini']]: {
     name: 'GPT-4o mini',
@@ -52,6 +60,7 @@ export const ModelInfoMap: Record<ModelLike, Omit<ModelInfo, 'id'>> = {
     tokenizerId: 'Xenova/gpt-4o',
     small: true,
     supportsImageInput: true,
+    legacy: false,
   },
   [ModelEnum['gpt-4o-64k-output-alpha']]: {
     name: 'GPT-4o Long Output',
@@ -62,10 +71,12 @@ export const ModelInfoMap: Record<ModelLike, Omit<ModelInfo, 'id'>> = {
     pricePerMillionOutputTokens: 18,
     tokenizerId: 'Xenova/gpt-4o',
     alpha: true,
+    legacy: true,
     notes:
       'OpenAI is offering an experimental version of GPT-4o with a maximum of 64K output tokens per request.',
     notesUrl: 'https://openai.com/gpt-4o-long-output/',
     supportsImageInput: true,
+    legacyReason: 'Superceded by GPT-4o',
   },
   [ModelEnum['gpt-4o-2024-08-06']]: {
     name: 'GPT-4o 08-06',
@@ -79,6 +90,7 @@ export const ModelInfoMap: Record<ModelLike, Omit<ModelInfo, 'id'>> = {
       'This model is a version of GPT-4o that was released on August 6, 2024. It has a maximum of 16K output tokens per request.',
     legacy: true,
     supportsImageInput: true,
+    legacyReason: 'Superceded by GPT-4o',
   },
   [ModelEnum['gpt-4.1']]: {
     name: 'GPT-4.1',
@@ -92,6 +104,7 @@ export const ModelInfoMap: Record<ModelLike, Omit<ModelInfo, 'id'>> = {
       'GPT-4.1 is a flagship model for complex tasks. It is well suited for problem solving across domains. Knowledge cutoff: Jun 01, 2024.',
     recommendedForCoding: true,
     supportsImageInput: true,
+    legacy: false,
   },
   [ModelEnum['gpt-4.1-mini']]: {
     name: 'GPT-4.1 mini',
@@ -104,6 +117,7 @@ export const ModelInfoMap: Record<ModelLike, Omit<ModelInfo, 'id'>> = {
     notes:
       'GPT-4.1 mini provides a balance between intelligence, speed, and cost that makes it an attractive model for many use cases.',
     small: true,
+    legacy: false,
   },
   [ModelEnum['gpt-4.1-nano']]: {
     name: 'GPT-4.1 nano',
@@ -115,6 +129,7 @@ export const ModelInfoMap: Record<ModelLike, Omit<ModelInfo, 'id'>> = {
     tokenizerId: 'Xenova/gpt-4o',
     notes: 'GPT-4.1 nano is the fastest, most cost-effective GPT-4.1 model.',
     small: true,
+    legacy: false,
   },
   [ModelEnum['o1-preview']]: {
     name: 'o1-preview',
@@ -128,6 +143,7 @@ export const ModelInfoMap: Record<ModelLike, Omit<ModelInfo, 'id'>> = {
       'An early preview of our o1 model, designed to reason about hard problems using broad general knowledge about the world.',
     alpha: true,
     legacy: true,
+    legacyReason: 'Superceded by o1',
   },
   [ModelEnum['o1-mini']]: {
     name: 'o1-mini',
@@ -140,8 +156,9 @@ export const ModelInfoMap: Record<ModelLike, Omit<ModelInfo, 'id'>> = {
     notes:
       "A faster and cheaper version of o1, particularly adept at coding, math, and science tasks where extensive general knowledge isn't required.",
     small: true,
-    legacy: true,
     reasoning: true,
+    legacy: true,
+    legacyReason: 'Superceded by o3-mini',
   },
   [ModelEnum['o1']]: {
     name: 'o1',
@@ -155,6 +172,7 @@ export const ModelInfoMap: Record<ModelLike, Omit<ModelInfo, 'id'>> = {
     legacy: true,
     reasoning: true,
     supportsImageInput: true,
+    legacyReason: 'Superceded by o3',
   },
   [ModelEnum['o3']]: {
     name: 'o3',
@@ -167,6 +185,7 @@ export const ModelInfoMap: Record<ModelLike, Omit<ModelInfo, 'id'>> = {
     notes: 'o3 is a well-rounded and powerful model across domains.',
     reasoning: true,
     supportsImageInput: true,
+    legacy: false,
   },
   [ModelEnum['o3-mini']]: {
     name: 'o3-mini',
@@ -177,7 +196,9 @@ export const ModelInfoMap: Record<ModelLike, Omit<ModelInfo, 'id'>> = {
     pricePerMillionOutputTokens: 4.4,
     tokenizerId: 'Xenova/gpt-4o',
     reasoning: true,
+    small: true,
     legacy: true,
+    legacyReason: 'Superceded by o4-mini',
   },
   [ModelEnum['o4-mini']]: {
     name: 'o4-mini',
@@ -191,6 +212,7 @@ export const ModelInfoMap: Record<ModelLike, Omit<ModelInfo, 'id'>> = {
       "o4-mini is OpenAI's latest small o-series model. It's optimized for fast, effective reasoning with exceptionally efficient performance in coding and visual tasks.",
     reasoning: true,
     small: true,
+    legacy: false,
   },
   [ModelEnum['claude-3-5-sonnet-20240620']]: {
     name: 'Claude 3.5 Sonnet (Old)',
@@ -202,8 +224,9 @@ export const ModelInfoMap: Record<ModelLike, Omit<ModelInfo, 'id'>> = {
     tokenizerId: 'Xenova/claude-tokenizer',
     notes: '8192 output tokens is in beta.',
     notesUrl: 'https://docs.anthropic.com/en/docs/about-claude/models',
-    legacy: true,
     supportsImageInput: true,
+    legacy: true,
+    legacyReason: 'Superceded by new Claude 3.5 Sonnet',
   },
   [ModelEnum['claude-3-5-sonnet-20241022']]: {
     name: 'Claude 3.5 Sonnet',
@@ -217,6 +240,7 @@ export const ModelInfoMap: Record<ModelLike, Omit<ModelInfo, 'id'>> = {
     notesUrl: 'https://www.anthropic.com/news/3-5-models-and-computer-use',
     recommendedForCoding: true,
     supportsImageInput: true,
+    legacy: false,
   },
   [ModelEnum['claude-3-5-haiku-20241022']]: {
     name: 'Claude 3.5 Haiku',
@@ -226,8 +250,8 @@ export const ModelInfoMap: Record<ModelLike, Omit<ModelInfo, 'id'>> = {
     pricePerMillionInputTokens: 1,
     pricePerMillionOutputTokens: 5,
     tokenizerId: 'Xenova/claude-tokenizer',
-    legacy: true,
     supportsImageInput: true,
+    legacy: false,
   },
   [NonModelEnum['chatgpt']]: {
     name: 'ChatGPT',
@@ -237,6 +261,7 @@ export const ModelInfoMap: Record<ModelLike, Omit<ModelInfo, 'id'>> = {
     pricePerMillionInputTokens: null,
     pricePerMillionOutputTokens: null,
     tokenizerId: null,
+    legacy: false,
   },
   [ModelEnum['claude-3-7-sonnet-20250219']]: {
     name: 'Claude 3.7 Sonnet',
@@ -248,6 +273,7 @@ export const ModelInfoMap: Record<ModelLike, Omit<ModelInfo, 'id'>> = {
     tokenizerId: 'Xenova/claude-tokenizer',
     recommendedForCoding: true,
     supportsImageInput: true,
+    legacy: false,
   },
   [ModelEnum['deepseek-chat']]: {
     name: 'DeepSeek-V3 (New)',
@@ -259,6 +285,7 @@ export const ModelInfoMap: Record<ModelLike, Omit<ModelInfo, 'id'>> = {
     tokenizerId: 'Xenova/gpt-4o',
     recommendedForCoding: true,
     supportsImageInput: false,
+    legacy: false,
   },
   [ModelEnum['deepseek-reasoner']]: {
     name: 'DeepSeek-R1',
@@ -270,6 +297,7 @@ export const ModelInfoMap: Record<ModelLike, Omit<ModelInfo, 'id'>> = {
     tokenizerId: 'Xenova/gpt-4o',
     reasoning: true,
     supportsImageInput: false,
+    legacy: false,
   },
   [ModelEnum['gemini-2.5-pro-exp-03-25']]: {
     name: 'Gemini 2.5 Pro Experimental',
@@ -283,6 +311,8 @@ export const ModelInfoMap: Record<ModelLike, Omit<ModelInfo, 'id'>> = {
     reasoning: true,
     recommendedForCoding: true,
     supportsImageInput: true,
+    legacy: true,
+    legacyReason: 'Superceded by Gemini 2.5 Pro Preview',
   },
   [ModelEnum['gemini-2.5-pro-preview-03-25']]: {
     name: 'Gemini 2.5 Pro Preview',
@@ -297,6 +327,8 @@ export const ModelInfoMap: Record<ModelLike, Omit<ModelInfo, 'id'>> = {
     reasoning: true,
     recommendedForCoding: true,
     supportsImageInput: true,
+    legacy: true,
+    legacyReason: 'Superceded by Gemini 2.5 Pro Preview (New)',
   },
   [ModelEnum['gemini-2.5-pro-preview-05-06']]: {
     name: 'Gemini 2.5 Pro Preview (New)',
@@ -311,6 +343,7 @@ export const ModelInfoMap: Record<ModelLike, Omit<ModelInfo, 'id'>> = {
     reasoning: true,
     recommendedForCoding: true,
     supportsImageInput: true,
+    legacy: false,
   },
   [ModelEnum['gemini-2.5-flash-preview-04-17']]: {
     name: 'Gemini 2.5 Flash Preview',
@@ -326,6 +359,7 @@ export const ModelInfoMap: Record<ModelLike, Omit<ModelInfo, 'id'>> = {
     small: true,
     recommendedForCoding: false,
     supportsImageInput: true,
+    legacy: false,
   },
 };
 
