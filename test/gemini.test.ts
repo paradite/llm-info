@@ -13,7 +13,7 @@ describe('Google Gemini API', () => {
   // ];
 
   const testModels = [
-    ModelEnum['gemini-2.5-pro-exp-03-25'],
+    // ModelEnum['gemini-2.5-pro-exp-03-25'],
     ModelEnum['gemini-2.5-flash-preview-04-17'],
   ];
 

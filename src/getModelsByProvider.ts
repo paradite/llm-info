@@ -63,6 +63,7 @@ export function convertOpenRouterModelToModelInfo(
     pricePerMillionOutputTokens: completionPrice,
     tokenizerId,
     notes: model.description,
+    legacy: false,
   };
 }
 
