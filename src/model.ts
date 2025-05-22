@@ -18,6 +18,8 @@ export enum ModelEnum {
   'claude-3-5-sonnet-20241022' = 'claude-3-5-sonnet-20241022',
   'claude-3-5-haiku-20241022' = 'claude-3-5-haiku-20241022',
   'claude-3-7-sonnet-20250219' = 'claude-3-7-sonnet-20250219',
+  'claude-opus-4-20250514' = 'claude-opus-4-20250514',
+  'claude-sonnet-4-20250514' = 'claude-sonnet-4-20250514',
   'deepseek-chat' = 'deepseek-chat',
   'deepseek-reasoner' = 'deepseek-reasoner',
   'gemini-2.5-pro-exp-03-25' = 'gemini-2.5-pro-exp-03-25',

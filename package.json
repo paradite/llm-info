@@ -1,6 +1,6 @@
 {
   "name": "llm-info",
-  "version": "1.0.47",
+  "version": "1.0.48",
   "description": "Information on LLM models, context window token limit, output token limit, pricing and more",
   "homepage": "https://eval.16x.engineer/",
   "repository": {
