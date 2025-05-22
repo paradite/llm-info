@@ -290,6 +290,7 @@ export const ModelInfoMap: Record<
     notes: 'Optimal balance of intelligence, cost, and speed',
     notesUrl: 'https://www.anthropic.com/claude/sonnet',
     supportsImageInput: true,
+    recommendedForCoding: true,
     legacy: false,
   },
   [NonModelEnum['chatgpt']]: {
@@ -336,7 +337,7 @@ export const ModelInfoMap: Record<
     tokenizerId: 'Xenova/gpt-4o',
     notes: 'This is an experimental model that is currently free to test.',
     reasoning: true,
-    recommendedForCoding: true,
+    recommendedForCoding: false,
     supportsImageInput: true,
     legacy: true,
     legacyReason: 'Superceded by Gemini 2.5 Pro Preview',
