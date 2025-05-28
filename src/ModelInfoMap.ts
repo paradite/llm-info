@@ -105,6 +105,7 @@ export const ModelInfoMap: Record<
     recommendedForCoding: true,
     supportsImageInput: true,
     legacy: false,
+    openRouterModelId: 'openai/gpt-4.1',
   },
   [ModelEnum['gpt-4.1-mini']]: {
     name: 'GPT-4.1 mini',
@@ -213,6 +214,7 @@ export const ModelInfoMap: Record<
     reasoning: true,
     small: true,
     legacy: false,
+    openRouterModelId: 'openai/o4-mini',
   },
   [ModelEnum['claude-3-5-sonnet-20240620']]: {
     name: 'Claude 3.5 Sonnet (Old)',
@@ -278,6 +280,7 @@ export const ModelInfoMap: Record<
     notesUrl: 'https://www.anthropic.com/claude/opus',
     supportsImageInput: true,
     legacy: false,
+    openRouterModelId: 'anthropic/claude-opus-4',
   },
   [ModelEnum['claude-sonnet-4-20250514']]: {
     name: 'Claude Sonnet 4',
@@ -292,6 +295,7 @@ export const ModelInfoMap: Record<
     supportsImageInput: true,
     recommendedForCoding: true,
     legacy: false,
+    openRouterModelId: 'anthropic/claude-sonnet-4',
   },
   [NonModelEnum['chatgpt']]: {
     name: 'ChatGPT',
@@ -314,6 +318,7 @@ export const ModelInfoMap: Record<
     recommendedForCoding: true,
     supportsImageInput: false,
     legacy: false,
+    openRouterModelId: 'deepseek/deepseek-chat-v3-0324',
   },
   [ModelEnum['deepseek-reasoner']]: {
     name: 'DeepSeek-R1',
@@ -372,6 +377,7 @@ export const ModelInfoMap: Record<
     recommendedForCoding: true,
     supportsImageInput: true,
     legacy: false,
+    openRouterModelId: 'google/gemini-2.5-pro-preview',
   },
   [ModelEnum['gemini-2.5-flash-preview-04-17']]: {
     name: 'Gemini 2.5 Flash Preview',
@@ -404,6 +410,7 @@ export const ModelInfoMap: Record<
     recommendedForCoding: false,
     supportsImageInput: true,
     legacy: false,
+    openRouterModelId: 'google/gemini-2.5-flash-preview-05-20',
   },
 };
 

@@ -17,6 +17,7 @@ export type ModelInfoCurrent = {
   reasoning?: boolean;
   recommendedForCoding?: boolean;
   supportsImageInput?: boolean;
+  openRouterModelId?: string;
 };
 
 export type ModelInfoLegacy = {
@@ -37,6 +38,7 @@ export type ModelInfoLegacy = {
   reasoning?: boolean;
   recommendedForCoding?: boolean;
   supportsImageInput?: boolean;
+  openRouterModelId?: string;
 };
 
 export type ModelInfo = ModelInfoCurrent | ModelInfoLegacy;
