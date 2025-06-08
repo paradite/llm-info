@@ -25,6 +25,7 @@ export enum ModelEnum {
   'gemini-2.5-pro-exp-03-25' = 'gemini-2.5-pro-exp-03-25',
   'gemini-2.5-pro-preview-03-25' = 'gemini-2.5-pro-preview-03-25',
   'gemini-2.5-pro-preview-05-06' = 'gemini-2.5-pro-preview-05-06',
+  'gemini-2.5-pro-preview-06-05' = 'gemini-2.5-pro-preview-06-05',
   'gemini-2.5-flash-preview-04-17' = 'gemini-2.5-flash-preview-04-17',
   'gemini-2.5-flash-preview-05-20' = 'gemini-2.5-flash-preview-05-20',
 }
