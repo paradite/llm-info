@@ -50,7 +50,7 @@ describe('Google Gemini API', () => {
           contents: 'Hello, who are you?',
           config: {
             thinkingConfig: {
-              thinkingBudget: 0,
+              thinkingBudget: 128,
             },
           },
         });
