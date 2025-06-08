@@ -17,27 +17,30 @@ Related projects:
 - pricing
 - image input support
 - `tokenizerId` for loading tokenizer from `@xenova/transformers`
+- legacy status and legacy reason
+- alpha/beta status
+- small model indicator
+- reasoning model indicator
+- coding recommendation
+- writing recommendation
+- OpenRouter model ID mapping
+- notes and documentation URLs
 - and more
 
 ## Models included
 
-- GPT-4
-- GPT-4 Turbo
 - GPT-4o
-- GPT-4o mini
 - GPT-4.1
-- GPT-4.1 mini
-- GPT-4.1 nano
 - o1
-- o1-mini
-- o1-preview
 - o3-mini
 - Claude 3.5 Sonnet
 - Claude 3.5 Haiku
 - Claude 3.7 Sonnet
+- Claude Sonnet 4
 - DeepSeek-V3
 - DeepSeek-R1
-- Gemini 2.5 Pro Experimental
+- Gemini 2.5 Pro
+- Gemini 2.5 Flash
 - .. and more
 
 Non-models (model-like) included:
@@ -86,11 +89,7 @@ console.log(AllModels);
   'claude-3-5-sonnet-20240620',
   'claude-3-5-sonnet-20241022',
   'claude-3-5-haiku-20241022',
-  'o3-mini',
-  'claude-3-7-sonnet-20250219',
-  'deepseek-chat',
-  'deepseek-reasoner',
-  'gemini-2.5-pro-exp-03-25'
+  // ...
 ]
 */
 
@@ -105,7 +104,31 @@ console.log(modelInfo);
   outputTokenLimit: 4096,
   pricePerMillionInputTokens: 5,
   pricePerMillionOutputTokens: 15,
-  tokenizerId: 'Xenova/gpt-4o'
+  tokenizerId: 'Xenova/gpt-4o',
+  supportsImageInput: true,
+  legacy: false
+}
+*/
+
+// Example with more fields including recommendations
+const recentModelInfo = ModelInfoMap['claude-sonnet-4-20250514'];
+console.log(recentModelInfo);
+/*
+{
+  name: 'Claude Sonnet 4',
+  provider: 'anthropic',
+  contextWindowTokenLimit: 200000,
+  outputTokenLimit: 64000,
+  pricePerMillionInputTokens: 3,
+  pricePerMillionOutputTokens: 15,
+  tokenizerId: 'Xenova/claude-tokenizer',
+  notes: 'Optimal balance of intelligence, cost, and speed',
+  notesUrl: 'https://www.anthropic.com/claude/sonnet',
+  supportsImageInput: true,
+  recommendedForCoding: true,
+  recommendedForWriting: true,
+  legacy: false,
+  openRouterModelId: 'anthropic/claude-sonnet-4'
 }
 */
 
