@@ -103,6 +103,7 @@ export const ModelInfoMap: Record<
     notes:
       'GPT-4.1 is a flagship model for complex tasks. It is well suited for problem solving across domains. Knowledge cutoff: Jun 01, 2024.',
     recommendedForCoding: true,
+    recommendedForWriting: true,
     supportsImageInput: true,
     legacy: false,
     openRouterModelId: 'openai/gpt-4.1',
@@ -294,6 +295,7 @@ export const ModelInfoMap: Record<
     notesUrl: 'https://www.anthropic.com/claude/sonnet',
     supportsImageInput: true,
     recommendedForCoding: true,
+    recommendedForWriting: true,
     legacy: false,
     openRouterModelId: 'anthropic/claude-sonnet-4',
   },
@@ -392,6 +394,7 @@ export const ModelInfoMap: Record<
     notesUrl: 'https://ai.google.dev/gemini-api/docs/pricing',
     reasoning: true,
     recommendedForCoding: true,
+    recommendedForWriting: true,
     supportsImageInput: true,
     legacy: false,
     openRouterModelId: 'google/gemini-2.5-pro-preview',
