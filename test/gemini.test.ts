@@ -14,8 +14,8 @@ describe('Google Gemini API', () => {
 
   const testModels = [
     // ModelEnum['gemini-2.5-pro-exp-03-25'],
-    ModelEnum['gemini-2.5-flash-preview-05-20'],
-    ModelEnum['gemini-2.5-pro-preview-06-05'],
+    ModelEnum['gemini-2.5-flash'],
+    ModelEnum['gemini-2.5-pro'],
   ];
 
   for (const model of testModels) {
