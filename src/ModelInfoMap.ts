@@ -469,6 +469,20 @@ export const ModelInfoMap: Record<
     legacy: false,
     openRouterModelId: 'google/gemini-2.5-flash',
   },
+  [ModelEnum['grok-4']]: {
+    name: 'Grok 4',
+    provider: AI_PROVIDERS.XAI,
+    contextWindowTokenLimit: 256000,
+    outputTokenLimit: 32768, // no info
+    pricePerMillionInputTokens: 3,
+    pricePerMillionOutputTokens: 15,
+    tokenizerId: 'Xenova/gpt-4o',
+    reasoning: true,
+    supportsImageInput: false,
+    recommendedForCoding: false,
+    recommendedForWriting: false,
+    legacy: false,
+  },
 };
 
 // Function to get ModelInfo with ID

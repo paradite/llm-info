@@ -7,6 +7,7 @@ export const AI_PROVIDERS = {
   GOOGLE: 'google',
   GOOGLE_VERTEX_AI: 'google-vertex-ai',
   FIREWORKS: 'fireworks',
+  XAI: 'xai',
 } as const;
 
 export type AI_PROVIDER_TYPE = (typeof AI_PROVIDERS)[keyof typeof AI_PROVIDERS];
@@ -104,6 +105,13 @@ export const AI_PROVIDER_CONFIG: Record<
     thirdParty: false,
     nativeSDK: true,
   },
+  [AI_PROVIDERS.XAI]: {
+    name: 'xAI',
+    firstParty: true,
+    baseURL: 'https://api.x.ai/v1',
+    thirdParty: false,
+    nativeSDK: false,
+  },
 } as const;
 
 export const AI_PROVIDER_NAME_MAP: Record<AI_PROVIDER_TYPE, string> = {
@@ -117,4 +125,5 @@ export const AI_PROVIDER_NAME_MAP: Record<AI_PROVIDER_TYPE, string> = {
   [AI_PROVIDERS.FIREWORKS]: AI_PROVIDER_CONFIG[AI_PROVIDERS.FIREWORKS].name,
   [AI_PROVIDERS.GOOGLE_VERTEX_AI]:
     AI_PROVIDER_CONFIG[AI_PROVIDERS.GOOGLE_VERTEX_AI].name,
+  [AI_PROVIDERS.XAI]: AI_PROVIDER_CONFIG[AI_PROVIDERS.XAI].name,
 } as const;
