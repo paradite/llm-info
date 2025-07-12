@@ -19,7 +19,6 @@ describe('xAI API', () => {
         const response = await openai.chat.completions.create({
           model,
           messages: [{ role: 'user', content: 'Hello, who are you?' }],
-          max_completion_tokens: 100,
         });
 
         expect(response.choices[0].message.content).toBeTruthy();
