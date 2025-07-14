@@ -478,7 +478,7 @@ export const ModelInfoMap: Record<
     pricePerMillionOutputTokens: 15,
     tokenizerId: 'Xenova/gpt-4o',
     reasoning: true,
-    supportsImageInput: false,
+    supportsImageInput: true,
     recommendedForCoding: false,
     recommendedForWriting: false,
     legacy: false,
