@@ -19,6 +19,7 @@ export type FIRST_PARTY_SDK_AI_PROVIDER_TYPE = {
   nativeSDK: true;
   baseURL?: string;
   website?: string;
+  apiKeysPage?: string;
 };
 
 export type FIRST_PARTY_BASE_URL_AI_PROVIDER_TYPE = {
@@ -28,6 +29,7 @@ export type FIRST_PARTY_BASE_URL_AI_PROVIDER_TYPE = {
   baseURL: string;
   nativeSDK: false;
   website?: string;
+  apiKeysPage?: string;
 };
 
 export type THIRD_PARTY_AI_PROVIDER_TYPE = {
@@ -37,6 +39,7 @@ export type THIRD_PARTY_AI_PROVIDER_TYPE = {
   nativeSDK: false;
   baseURL: string;
   website: string;
+  apiKeysPage?: string;
 };
 
 export type AI_PROVIDER_CONFIG_TYPE =
@@ -53,12 +56,14 @@ export const AI_PROVIDER_CONFIG: Record<
     firstParty: true,
     thirdParty: false,
     nativeSDK: true,
+    apiKeysPage: 'https://platform.openai.com/api-keys',
   },
   [AI_PROVIDERS.ANTHROPIC]: {
     name: 'Anthropic',
     firstParty: true,
     thirdParty: false,
     nativeSDK: true,
+    apiKeysPage: 'https://console.anthropic.com/settings/keys',
   },
   [AI_PROVIDERS.AZURE_OPENAI]: {
     name: 'Azure OpenAI',
@@ -75,6 +80,7 @@ export const AI_PROVIDER_CONFIG: Record<
     baseURL: 'https://api.deepseek.com',
     thirdParty: false,
     nativeSDK: false,
+    apiKeysPage: 'https://platform.deepseek.com/api_keys',
   },
   [AI_PROVIDERS.OPENROUTER]: {
     name: 'OpenRouter',
@@ -83,6 +89,7 @@ export const AI_PROVIDER_CONFIG: Record<
     website: 'https://openrouter.ai',
     thirdParty: true,
     nativeSDK: false,
+    apiKeysPage: 'https://openrouter.ai/settings/keys',
   },
   [AI_PROVIDERS.GOOGLE]: {
     name: 'Google',
@@ -90,6 +97,7 @@ export const AI_PROVIDER_CONFIG: Record<
     baseURL: 'https://generativelanguage.googleapis.com/v1beta/openai/',
     thirdParty: false,
     nativeSDK: true,
+    apiKeysPage: 'https://aistudio.google.com/app/apikey',
   },
   [AI_PROVIDERS.FIREWORKS]: {
     name: 'Fireworks',
@@ -111,6 +119,7 @@ export const AI_PROVIDER_CONFIG: Record<
     baseURL: 'https://api.x.ai/v1',
     thirdParty: false,
     nativeSDK: false,
+    apiKeysPage: 'https://console.x.ai/',
   },
 } as const;
 

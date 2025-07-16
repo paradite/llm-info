@@ -25,6 +25,7 @@ Related projects:
 - writing recommendation
 - OpenRouter model ID mapping
 - notes and documentation URLs
+- API keys page URLs for easy access to provider API key management
 - and more
 
 ## Models included
@@ -156,11 +157,13 @@ console.log(AI_PROVIDER_CONFIG);
 {
   openai: {
     name: 'OpenAI',
-    firstParty: true
+    firstParty: true,
+    apiKeysPage: 'https://platform.openai.com/api-keys'
   },
   anthropic: {
     name: 'Anthropic',
-    firstParty: true
+    firstParty: true,
+    apiKeysPage: 'https://console.anthropic.com/settings/keys'
   },
   'azure-openai': {
     name: 'Azure OpenAI',
@@ -171,24 +174,33 @@ console.log(AI_PROVIDER_CONFIG);
   deepseek: {
     name: 'DeepSeek',
     firstParty: true,
-    baseURL: 'https://api.deepseek.com'
+    baseURL: 'https://api.deepseek.com',
+    apiKeysPage: 'https://platform.deepseek.com/api_keys'
   },
   openrouter: {
     name: 'OpenRouter',
     firstParty: false,
     baseURL: 'https://openrouter.ai/api/v1',
-    website: 'https://openrouter.ai'
+    website: 'https://openrouter.ai',
+    apiKeysPage: 'https://openrouter.ai/keys'
   },
   google: {
     name: 'Google',
     firstParty: true,
-    baseURL: 'https://generativelanguage.googleapis.com/v1beta/openai/'
+    baseURL: 'https://generativelanguage.googleapis.com/v1beta/openai/',
+    apiKeysPage: 'https://aistudio.google.com/app/apikey'
   },
   fireworks: {
     name: 'Fireworks',
     firstParty: false,
     baseURL: 'https://api.fireworks.ai/inference/v1',
     website: 'https://fireworks.ai'
+  },
+  xai: {
+    name: 'xAI',
+    firstParty: true,
+    baseURL: 'https://api.x.ai/v1',
+    apiKeysPage: 'https://console.x.ai/'
   }
 }
 */
