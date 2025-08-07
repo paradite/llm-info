@@ -4,7 +4,7 @@ describe('OpenAI API', () => {
   // Skip test if OPENAI_API_KEY is not set
   const testFn = process.env.OPENAI_API_KEY ? it : it.skip;
 
-  const testModels = [ModelEnum['gpt-4.1']];
+  const testModels = [ModelEnum['gpt-4.1'], ModelEnum['gpt-5']];
   // const testModels = [
   //   ModelEnum['gpt-4.1'],
   //   ModelEnum['o4-mini'],
@@ -22,7 +22,7 @@ describe('OpenAI API', () => {
         const response = await openai.chat.completions.create({
           model,
           messages: [{ role: 'user', content: 'Hello, who are you?' }],
-          max_completion_tokens: 100,
+          max_completion_tokens: 200,
         });
 
         expect(response.choices[0].message.content).toBeTruthy();
