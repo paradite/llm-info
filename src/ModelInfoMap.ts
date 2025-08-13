@@ -458,7 +458,7 @@ export const ModelInfoMap: Record<
     notesUrl: 'https://ai.google.dev/gemini-api/docs/pricing',
     reasoning: true,
     recommendedForCoding: true,
-    recommendedForWriting: true,
+    recommendedForWriting: false,
     supportsImageInput: true,
     legacy: true,
     legacyReason: 'Superceded by Gemini 2.5 Pro',
