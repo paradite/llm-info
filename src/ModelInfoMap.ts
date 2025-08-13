@@ -148,6 +148,7 @@ export const ModelInfoMap: Record<
     tokenizerId: 'Xenova/gpt-4o',
     supportsImageInput: true,
     recommendedForCoding: true,
+    recommendedForWriting: true,
     reasoning: true,
     legacy: false,
     openRouterModelId: 'openai/gpt-5',
