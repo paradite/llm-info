@@ -22,6 +22,7 @@ export enum ModelEnum {
   'claude-3-5-haiku-20241022' = 'claude-3-5-haiku-20241022',
   'claude-3-7-sonnet-20250219' = 'claude-3-7-sonnet-20250219',
   'claude-opus-4-20250514' = 'claude-opus-4-20250514',
+  'claude-opus-4-1-20250805' = 'claude-opus-4-1-20250805',
   'claude-sonnet-4-20250514' = 'claude-sonnet-4-20250514',
   'deepseek-chat' = 'deepseek-chat',
   'deepseek-reasoner' = 'deepseek-reasoner',

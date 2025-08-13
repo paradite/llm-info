@@ -22,7 +22,7 @@ describe('OpenAI API', () => {
         const response = await openai.chat.completions.create({
           model,
           messages: [{ role: 'user', content: 'Hello, who are you?' }],
-          max_completion_tokens: 200,
+          max_completion_tokens: 500,
         });
 
         expect(response.choices[0].message.content).toBeTruthy();
