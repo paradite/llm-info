@@ -48,7 +48,8 @@ export const ModelInfoMap: Record<
     pricePerMillionOutputTokens: 15,
     tokenizerId: 'Xenova/gpt-4o',
     supportsImageInput: true,
-    legacy: false,
+    legacy: true,
+    legacyReason: 'Superceded by GPT-5',
   },
   [ModelEnum['gpt-4o-mini']]: {
     name: 'GPT-4o mini',
@@ -60,7 +61,8 @@ export const ModelInfoMap: Record<
     tokenizerId: 'Xenova/gpt-4o',
     small: true,
     supportsImageInput: true,
-    legacy: false,
+    legacy: true,
+    legacyReason: 'Superceded by GPT-5 mini',
   },
   [ModelEnum['gpt-4o-64k-output-alpha']]: {
     name: 'GPT-4o Long Output',
@@ -105,7 +107,8 @@ export const ModelInfoMap: Record<
     recommendedForCoding: true,
     recommendedForWriting: true,
     supportsImageInput: true,
-    legacy: false,
+    legacy: true,
+    legacyReason: 'Superceded by GPT-5',
     openRouterModelId: 'openai/gpt-4.1',
   },
   [ModelEnum['gpt-4.1-mini']]: {
@@ -119,7 +122,8 @@ export const ModelInfoMap: Record<
     notes:
       'GPT-4.1 mini provides a balance between intelligence, speed, and cost that makes it an attractive model for many use cases.',
     small: true,
-    legacy: false,
+    legacy: true,
+    legacyReason: 'Superceded by GPT-5 mini',
   },
   [ModelEnum['gpt-4.1-nano']]: {
     name: 'GPT-4.1 nano',
@@ -131,7 +135,8 @@ export const ModelInfoMap: Record<
     tokenizerId: 'Xenova/gpt-4o',
     notes: 'GPT-4.1 nano is the fastest, most cost-effective GPT-4.1 model.',
     small: true,
-    legacy: false,
+    legacy: true,
+    legacyReason: 'Superceded by GPT-5 nano',
   },
   [ModelEnum['gpt-5']]: {
     name: 'GPT-5',
