@@ -107,7 +107,7 @@ export const ModelInfoMap: Record<
     recommendedForCoding: true,
     recommendedForWriting: true,
     supportsImageInput: true,
-    // legacy: true,
+    legacy: false,
     // legacyReason: 'Superceded by GPT-5',
     openRouterModelId: 'openai/gpt-4.1',
   },
