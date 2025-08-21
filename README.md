@@ -228,6 +228,64 @@ console.log(`Test sentence: ${testSentence}\n${results.join('\n')}`);
 // claude-3-5-sonnet-20240620: 16
 ```
 
+## Legacy Model Mappings
+
+Some model IDs have been reused for newer versions. The library includes a legacy mapping system to track these transitions:
+
+```typescript
+import { getLegacyMappingByModelId, getAllLegacyMappings } from 'llm-info';
+
+// Check for legacy model mappings
+const legacyMapping = getLegacyMappingByModelId('deepseek-chat');
+if (legacyMapping) {
+  console.log(`Model ID: ${legacyMapping.modelId}`);
+  console.log(`Legacy Name: ${legacyMapping.legacyName}`);
+  console.log(`Current Name: ${legacyMapping.currentName}`);
+  console.log(`Legacy Release: ${legacyMapping.legacyReleaseDate}`);
+  console.log(`Transition Date: ${legacyMapping.transitionDate}`);
+}
+/*
+Model ID: deepseek-chat
+Legacy Name: DeepSeek-V3 (new)
+Current Name: DeepSeek-V3.1
+Legacy Release: 2025-03-24
+Transition Date: 2025-08-21
+*/
+
+// Get all legacy mappings
+const allMappings = getAllLegacyMappings();
+console.log(allMappings);
+/*
+[
+  {
+    modelId: 'deepseek-chat',
+    legacyName: 'DeepSeek-V3 (new)',
+    currentName: 'DeepSeek-V3.1',
+    legacyReleaseDate: '2025-03-24',
+    transitionDate: '2025-08-21',
+    notes: 'Model ID remained the same but refers to a newer version',
+    legacyModelInfo: {
+      name: 'DeepSeek-V3 (new)',
+      provider: 'deepseek',
+      contextWindowTokenLimit: 64000,
+      outputTokenLimit: 8192,
+      pricePerMillionInputTokens: 0.27,
+      pricePerMillionOutputTokens: 1.10,
+      tokenizerId: null,
+      legacy: true,
+      legacyReason: 'Replaced by DeepSeek-V3.1 on the same model ID',
+      releaseDate: '2025-03-24',
+      openRouterModelId: 'deepseek/deepseek-chat-v3-0324'
+    }
+  }
+]
+*/
+```
+
+### Current Legacy Mappings
+
+- **deepseek-chat**: Originally "DeepSeek-V3 (new)" (released 2025-03-24), now refers to "DeepSeek-V3.1" (transitioned 2025-08-21)
+
 ## Testing
 
 ```
