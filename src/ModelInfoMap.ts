@@ -385,7 +385,6 @@ export const ModelInfoMap: Record<
     supportsImageInput: false,
     legacy: false,
     releaseDate: '2025-08-21',
-    openRouterModelId: 'deepseek/deepseek-chat-v3-0324',
   },
   [ModelEnum['deepseek-reasoner']]: {
     name: 'DeepSeek-V3.1 (Thinking)',
@@ -398,6 +397,7 @@ export const ModelInfoMap: Record<
     reasoning: true,
     supportsImageInput: false,
     legacy: false,
+    releaseDate: '2025-08-21',
   },
   [ModelEnum['gemini-2.5-pro-exp-03-25']]: {
     name: 'Gemini 2.5 Pro Experimental',
