@@ -1,5 +1,5 @@
 import { ModelEnum } from './model';
-import { ModelInfoLegacy } from './modelInfo';
+import { ModelInfoDeprecated } from './modelInfo';
 import { AI_PROVIDERS } from './provider';
 
 export interface DeprecatedModelMapping {
@@ -8,7 +8,7 @@ export interface DeprecatedModelMapping {
   deprecatedReleaseDate?: string;
   transitionDate?: string;
   notes?: string;
-  deprecatedModelInfo: ModelInfoLegacy;
+  deprecatedModelInfo: ModelInfoDeprecated;
 }
 
 export const DEPRECATED_MODEL_MAPPINGS: DeprecatedModelMapping[] = [
@@ -29,6 +29,7 @@ export const DEPRECATED_MODEL_MAPPINGS: DeprecatedModelMapping[] = [
       tokenizerId: null,
       legacy: true,
       legacyReason: 'Replaced by DeepSeek-V3.1 on the same model ID',
+      deprecated: true,
       releaseDate: '2025-03-24',
     },
   },
@@ -52,6 +53,7 @@ export const DEPRECATED_MODEL_MAPPINGS: DeprecatedModelMapping[] = [
       legacy: true,
       legacyReason:
         'Replaced by DeepSeek-V3.1 (Thinking Mode) on the same model ID',
+      deprecated: true,
       releaseDate: '2025-05-28',
     },
   },
@@ -69,7 +71,7 @@ export function getAllDeprecatedMappings(): DeprecatedModelMapping[] {
   return [...DEPRECATED_MODEL_MAPPINGS];
 }
 
-export function getAllDeprecatedModelsInfo(): ModelInfoLegacy[] {
+export function getAllDeprecatedModelsInfo(): ModelInfoDeprecated[] {
   return DEPRECATED_MODEL_MAPPINGS.map(
     (mapping) => mapping.deprecatedModelInfo
   );
