@@ -107,8 +107,8 @@ export const ModelInfoMap: Record<
     recommendedForCoding: true,
     recommendedForWriting: true,
     supportsImageInput: true,
-    legacy: true,
-    legacyReason: 'Superceded by GPT-5',
+    // legacy: true,
+    // legacyReason: 'Superceded by GPT-5',
     openRouterModelId: 'openai/gpt-4.1',
   },
   [ModelEnum['gpt-4.1-mini']]: {
@@ -179,7 +179,7 @@ export const ModelInfoMap: Record<
     reasoning: true,
     small: true,
     legacy: false,
-    openRouterModelId: 'openai/gpt-5-mini',
+    openRouterModelId: 'openai/gpt-5-nano',
   },
   [ModelEnum['o1-preview']]: {
     name: 'o1-preview',
