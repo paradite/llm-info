@@ -26,6 +26,7 @@ Related projects:
 - OpenRouter model ID mapping
 - notes and documentation URLs
 - API keys page URLs for easy access to provider API key management
+- Legacy model mappings (`deepseek-chat`, `deepseek-reasoner`)
 - and more
 
 ## Models included
@@ -240,16 +241,28 @@ const legacyMapping = getLegacyMappingByModelId('deepseek-chat');
 if (legacyMapping) {
   console.log(`Model ID: ${legacyMapping.modelId}`);
   console.log(`Legacy Name: ${legacyMapping.legacyName}`);
-  console.log(`Current Name: ${legacyMapping.currentName}`);
   console.log(`Legacy Release: ${legacyMapping.legacyReleaseDate}`);
   console.log(`Transition Date: ${legacyMapping.transitionDate}`);
+  console.log('Legacy Model Info:', legacyMapping.legacyModelInfo);
 }
 /*
 Model ID: deepseek-chat
 Legacy Name: DeepSeek-V3 (new)
-Current Name: DeepSeek-V3.1
 Legacy Release: 2025-03-24
 Transition Date: 2025-08-21
+Legacy Model Info: {
+  id: 'deepseek-chat',
+  name: 'DeepSeek-V3 (new)',
+  provider: 'deepseek',
+  contextWindowTokenLimit: 64000,
+  outputTokenLimit: 8192,
+  pricePerMillionInputTokens: 0.27,
+  pricePerMillionOutputTokens: 1.1,
+  tokenizerId: null,
+  legacy: true,
+  legacyReason: 'Replaced by DeepSeek-V3.1 on the same model ID',
+  releaseDate: '2025-03-24'
+}
 */
 
 // Get all legacy mappings
@@ -260,22 +273,43 @@ console.log(allMappings);
   {
     modelId: 'deepseek-chat',
     legacyName: 'DeepSeek-V3 (new)',
-    currentName: 'DeepSeek-V3.1',
     legacyReleaseDate: '2025-03-24',
     transitionDate: '2025-08-21',
     notes: 'Model ID remained the same but refers to a newer version',
     legacyModelInfo: {
+      id: 'deepseek-chat',
       name: 'DeepSeek-V3 (new)',
       provider: 'deepseek',
       contextWindowTokenLimit: 64000,
       outputTokenLimit: 8192,
       pricePerMillionInputTokens: 0.27,
-      pricePerMillionOutputTokens: 1.10,
+      pricePerMillionOutputTokens: 1.1,
       tokenizerId: null,
       legacy: true,
       legacyReason: 'Replaced by DeepSeek-V3.1 on the same model ID',
-      releaseDate: '2025-03-24',
-      openRouterModelId: 'deepseek/deepseek-chat-v3-0324'
+      releaseDate: '2025-03-24'
+    }
+  },
+  {
+    modelId: 'deepseek-reasoner',
+    legacyName: 'DeepSeek-R1',
+    legacyReleaseDate: '2025-05-28',
+    transitionDate: '2025-08-21',
+    notes: 'Model ID remained the same but refers to a newer version',
+    legacyModelInfo: {
+      id: 'deepseek-reasoner',
+      name: 'DeepSeek-R1',
+      provider: 'deepseek',
+      contextWindowTokenLimit: 64000,
+      outputTokenLimit: 8000,
+      pricePerMillionInputTokens: 0.55,
+      pricePerMillionOutputTokens: 2.19,
+      tokenizerId: 'Xenova/gpt-4o',
+      reasoning: true,
+      supportsImageInput: false,
+      legacy: true,
+      legacyReason: 'Replaced by DeepSeek-V3.1 (Thinking Mode) on the same model ID',
+      releaseDate: '2025-05-28'
     }
   }
 ]
@@ -285,6 +319,7 @@ console.log(allMappings);
 ### Current Legacy Mappings
 
 - **deepseek-chat**: Originally "DeepSeek-V3 (new)" (released 2025-03-24), now refers to "DeepSeek-V3.1" (transitioned 2025-08-21)
+- **deepseek-reasoner**: Originally "DeepSeek-R1" (released 2025-05-28), now refers to "DeepSeek-V3.1 (Thinking Mode)" (transitioned 2025-08-21)
 
 ## Testing
 
