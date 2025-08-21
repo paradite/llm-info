@@ -1,3 +1,4 @@
+import { ModelEnum } from './model';
 import { AI_PROVIDER_TYPE } from './provider';
 
 export type ModelInfoCurrent = {
@@ -48,7 +49,7 @@ export type ModelInfoLegacy = {
 export type ModelInfoDeprecated = {
   name: string;
   provider: AI_PROVIDER_TYPE;
-  id: string;
+  id: ModelEnum;
   contextWindowTokenLimit: number;
   outputTokenLimit: number | null;
   pricePerMillionInputTokens: number | null;
