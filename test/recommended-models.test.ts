@@ -13,6 +13,7 @@ describe('Recommended models', () => {
       'claude-sonnet-4-20250514',
       'deepseek-chat',
       'gemini-2.5-pro',
+      'gpt-4.1',
       'gpt-5',
     ];
 

@@ -109,3 +109,13 @@ export async function getModelsByProvider(
   // For other providers, use the local ModelInfoMap with IDs
   return getAllModelsWithIds().filter((model) => model.provider === provider);
 }
+
+/**
+ * Get all models that share the same API model ID
+ * This is useful for models like DeepSeek V3 and V3.1 that use the same API endpoint
+ * @param apiModelId The API model ID to search for
+ * @returns Array of ModelInfo objects that share the same API model ID
+ */
+export function getModelsByApiId(apiModelId: string): ModelInfo[] {
+  return getAllModelsWithIds().filter((model) => model.id === apiModelId);
+}

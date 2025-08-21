@@ -17,6 +17,7 @@ describe('Non-legacy models', () => {
       'deepseek-reasoner',
       'gemini-2.5-flash',
       'gemini-2.5-pro',
+      'gpt-4.1',
       'gpt-5',
       'gpt-5-mini',
       'gpt-5-nano',

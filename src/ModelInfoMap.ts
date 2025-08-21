@@ -374,7 +374,7 @@ export const ModelInfoMap: Record<
     legacy: false,
   },
   [ModelEnum['deepseek-chat']]: {
-    name: 'DeepSeek-V3 (New)',
+    name: 'DeepSeek-V3.1',
     provider: AI_PROVIDERS.DEEPSEEK,
     contextWindowTokenLimit: 64000,
     outputTokenLimit: 8000,
@@ -384,6 +384,7 @@ export const ModelInfoMap: Record<
     recommendedForCoding: true,
     supportsImageInput: false,
     legacy: false,
+    releaseDate: '2025-08-21',
     openRouterModelId: 'deepseek/deepseek-chat-v3-0324',
   },
   [ModelEnum['deepseek-reasoner']]: {

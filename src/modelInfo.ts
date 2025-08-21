@@ -19,6 +19,7 @@ export type ModelInfoCurrent = {
   recommendedForWriting?: boolean;
   supportsImageInput?: boolean;
   openRouterModelId?: string;
+  releaseDate?: string; // ISO date string for models with same ID but different versions
 };
 
 export type ModelInfoLegacy = {
@@ -41,6 +42,7 @@ export type ModelInfoLegacy = {
   recommendedForWriting?: boolean;
   supportsImageInput?: boolean;
   openRouterModelId?: string;
+  releaseDate?: string; // ISO date string for models with same ID but different versions
 };
 
 export type ModelInfo = ModelInfoCurrent | ModelInfoLegacy;
