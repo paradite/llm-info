@@ -26,7 +26,7 @@ Related projects:
 - OpenRouter model ID mapping
 - notes and documentation URLs
 - API keys page URLs for easy access to provider API key management
-- Legacy model mappings (`deepseek-chat`, `deepseek-reasoner`)
+- Deprecated model mappings (DeepSeek-V3 under `deepseek-chat`, DeepSeek-R1 under `deepseek-reasoner`)
 - and more
 
 ## Models included
@@ -229,28 +229,31 @@ console.log(`Test sentence: ${testSentence}\n${results.join('\n')}`);
 // claude-3-5-sonnet-20240620: 16
 ```
 
-## Legacy Model Mappings
+## Deprecated Model Mappings
 
-Some model IDs have been reused for newer versions. The library includes a legacy mapping system to track these transitions:
+Some model IDs have been reused for newer versions. The library includes a deprecated mapping system to track these transitions:
 
 ```typescript
-import { getLegacyMappingByModelId, getAllLegacyMappings } from 'llm-info';
+import {
+  getDeprecatedMappingByModelId,
+  getAllDeprecatedMappings,
+} from 'llm-info';
 
-// Check for legacy model mappings
-const legacyMapping = getLegacyMappingByModelId('deepseek-chat');
-if (legacyMapping) {
-  console.log(`Model ID: ${legacyMapping.modelId}`);
-  console.log(`Legacy Name: ${legacyMapping.legacyName}`);
-  console.log(`Legacy Release: ${legacyMapping.legacyReleaseDate}`);
-  console.log(`Transition Date: ${legacyMapping.transitionDate}`);
-  console.log('Legacy Model Info:', legacyMapping.legacyModelInfo);
+// Check for deprecated model mappings
+const deprecatedMapping = getDeprecatedMappingByModelId('deepseek-chat');
+if (deprecatedMapping) {
+  console.log(`Model ID: ${deprecatedMapping.modelId}`);
+  console.log(`Deprecated Name: ${deprecatedMapping.deprecatedName}`);
+  console.log(`Deprecated Release: ${deprecatedMapping.deprecatedReleaseDate}`);
+  console.log(`Transition Date: ${deprecatedMapping.transitionDate}`);
+  console.log('Deprecated Model Info:', deprecatedMapping.deprecatedModelInfo);
 }
 /*
 Model ID: deepseek-chat
-Legacy Name: DeepSeek-V3 (new)
-Legacy Release: 2025-03-24
+Deprecated Name: DeepSeek-V3 (new)
+Deprecated Release: 2025-03-24
 Transition Date: 2025-08-21
-Legacy Model Info: {
+Deprecated Model Info: {
   id: 'deepseek-chat',
   name: 'DeepSeek-V3 (new)',
   provider: 'deepseek',
@@ -265,18 +268,12 @@ Legacy Model Info: {
 }
 */
 
-// Get all legacy mappings
-const allMappings = getAllLegacyMappings();
-console.log(allMappings);
+// Get all deprecated models info
+const allModelsInfo = getAllDeprecatedModelsInfo();
+console.log(allModelsInfo);
 /*
 [
-  {
-    modelId: 'deepseek-chat',
-    legacyName: 'DeepSeek-V3 (new)',
-    legacyReleaseDate: '2025-03-24',
-    transitionDate: '2025-08-21',
-    notes: 'Model ID remained the same but refers to a newer version',
-    legacyModelInfo: {
+    {
       id: 'deepseek-chat',
       name: 'DeepSeek-V3 (new)',
       provider: 'deepseek',
@@ -288,15 +285,8 @@ console.log(allMappings);
       legacy: true,
       legacyReason: 'Replaced by DeepSeek-V3.1 on the same model ID',
       releaseDate: '2025-03-24'
-    }
-  },
-  {
-    modelId: 'deepseek-reasoner',
-    legacyName: 'DeepSeek-R1',
-    legacyReleaseDate: '2025-05-28',
-    transitionDate: '2025-08-21',
-    notes: 'Model ID remained the same but refers to a newer version',
-    legacyModelInfo: {
+    },
+    {
       id: 'deepseek-reasoner',
       name: 'DeepSeek-R1',
       provider: 'deepseek',
@@ -311,8 +301,7 @@ console.log(allMappings);
       legacyReason: 'Replaced by DeepSeek-V3.1 (Thinking Mode) on the same model ID',
       releaseDate: '2025-05-28'
     }
-  }
-]
+  ]
 */
 ```
 

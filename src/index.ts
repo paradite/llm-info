@@ -3,4 +3,4 @@ export * from './provider';
 export * from './modelInfo';
 export * from './getModelsByProvider';
 export * from './ModelInfoMap';
-export * from './legacyModelMapping';
+export * from './deprecatedModelMapping';

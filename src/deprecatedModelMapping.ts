@@ -2,24 +2,24 @@ import { ModelEnum } from './model';
 import { ModelInfoLegacy } from './modelInfo';
 import { AI_PROVIDERS } from './provider';
 
-export interface LegacyModelMapping {
+export interface DeprecatedModelMapping {
   modelId: ModelEnum;
-  legacyName: string;
-  legacyReleaseDate?: string;
+  deprecatedName: string;
+  deprecatedReleaseDate?: string;
   transitionDate?: string;
   notes?: string;
-  legacyModelInfo: ModelInfoLegacy;
+  deprecatedModelInfo: ModelInfoLegacy;
 }
 
-export const LEGACY_MODEL_MAPPINGS: LegacyModelMapping[] = [
+export const DEPRECATED_MODEL_MAPPINGS: DeprecatedModelMapping[] = [
   {
     modelId: ModelEnum['deepseek-chat'],
-    legacyName: 'DeepSeek-V3 (new)',
-    legacyReleaseDate: '2025-03-24',
+    deprecatedName: 'DeepSeek-V3 (new)',
+    deprecatedReleaseDate: '2025-03-24',
     transitionDate: '2025-08-21',
     notes: 'Model ID remained the same but refers to a newer version',
-    legacyModelInfo: {
-      id: 'deepseek-chat',
+    deprecatedModelInfo: {
+      id: ModelEnum['deepseek-chat'],
       name: 'DeepSeek-V3 (new)',
       provider: AI_PROVIDERS.DEEPSEEK,
       contextWindowTokenLimit: 64000,
@@ -34,12 +34,12 @@ export const LEGACY_MODEL_MAPPINGS: LegacyModelMapping[] = [
   },
   {
     modelId: ModelEnum['deepseek-reasoner'],
-    legacyName: 'DeepSeek-R1',
-    legacyReleaseDate: '2025-05-28',
+    deprecatedName: 'DeepSeek-R1',
+    deprecatedReleaseDate: '2025-05-28',
     transitionDate: '2025-08-21',
     notes: 'Model ID remained the same but refers to a newer version',
-    legacyModelInfo: {
-      id: 'deepseek-reasoner',
+    deprecatedModelInfo: {
+      id: ModelEnum['deepseek-reasoner'],
       name: 'DeepSeek-R1',
       provider: AI_PROVIDERS.DEEPSEEK,
       contextWindowTokenLimit: 64000,
@@ -57,12 +57,20 @@ export const LEGACY_MODEL_MAPPINGS: LegacyModelMapping[] = [
   },
 ];
 
-export function getLegacyMappingByModelId(
+export function getDeprecatedMappingByModelId(
   modelId: string
-): LegacyModelMapping | undefined {
-  return LEGACY_MODEL_MAPPINGS.find((mapping) => mapping.modelId === modelId);
+): DeprecatedModelMapping[] {
+  return DEPRECATED_MODEL_MAPPINGS.filter(
+    (mapping) => mapping.modelId === modelId
+  );
 }
 
-export function getAllLegacyMappings(): LegacyModelMapping[] {
-  return [...LEGACY_MODEL_MAPPINGS];
+export function getAllDeprecatedMappings(): DeprecatedModelMapping[] {
+  return [...DEPRECATED_MODEL_MAPPINGS];
+}
+
+export function getAllDeprecatedModelsInfo(): ModelInfoLegacy[] {
+  return DEPRECATED_MODEL_MAPPINGS.map(
+    (mapping) => mapping.deprecatedModelInfo
+  );
 }
