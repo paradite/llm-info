@@ -22,6 +22,7 @@ describe('Non-legacy models', () => {
       'gpt-5-mini',
       'gpt-5-nano',
       'grok-4',
+      'grok-code-fast-1',
       'o3',
       'o4-mini',
     ];

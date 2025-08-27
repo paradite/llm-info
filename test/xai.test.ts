@@ -5,7 +5,7 @@ describe('xAI API', () => {
   // Skip test if XAI_API_KEY is not set
   const testFn = process.env.XAI_API_KEY ? it : it.skip;
 
-  const testModels = [ModelEnum['grok-4']];
+  const testModels = [ModelEnum['grok-4'], ModelEnum['grok-code-fast-1']];
 
   for (const model of testModels) {
     testFn(
