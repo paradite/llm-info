@@ -548,6 +548,17 @@ export const ModelInfoMap: Record<
     recommendedForWriting: false,
     legacy: false,
   },
+  [ModelEnum['grok-code-fast-1']]: {
+    name: 'Grok Code Fast 1',
+    provider: AI_PROVIDERS.XAI,
+    contextWindowTokenLimit: 256000,
+    outputTokenLimit: 32768, // no info
+    pricePerMillionInputTokens: 0.2,
+    pricePerMillionOutputTokens: 1.5,
+    tokenizerId: 'Xenova/gpt-4o',
+    reasoning: true,
+    legacy: false,
+  },
 };
 
 // Function to get ModelInfo with ID

@@ -35,6 +35,7 @@ export enum ModelEnum {
   'gemini-2.5-flash-preview-05-20' = 'gemini-2.5-flash-preview-05-20',
   'gemini-2.5-flash' = 'gemini-2.5-flash',
   'grok-4' = 'grok-4',
+  'grok-code-fast-1' = 'grok-code-fast-1',
 }
 
 export enum NonModelEnum {
