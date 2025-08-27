@@ -67,7 +67,7 @@ Third-party providers:
 ## Install:
 
 ```bash
-$ yarn add llm-info
+$ npm install llm-info
 ```
 
 ## Usage
@@ -305,7 +305,7 @@ console.log(allModelsInfo);
 */
 ```
 
-### Current Legacy Mappings
+### Current Deprecated Mappings
 
 - **deepseek-chat**: Originally "DeepSeek-V3 (new)" (released 2025-03-24), now refers to "DeepSeek-V3.1" (transitioned 2025-08-21)
 - **deepseek-reasoner**: Originally "DeepSeek-R1" (released 2025-05-28), now refers to "DeepSeek-V3.1 (Thinking Mode)" (transitioned 2025-08-21)
@@ -313,5 +313,5 @@ console.log(allModelsInfo);
 ## Testing
 
 ```
-$ yarn test
+$ npm test
 ```
