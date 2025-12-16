@@ -10,7 +10,8 @@ describe('Recommended models', () => {
       .sort();
 
     const expectedCodingModels = [
-      'claude-sonnet-4-20250514',
+      'claude-opus-4-5-20251101',
+      'claude-sonnet-4-5-20250929',
       'deepseek-chat',
       'gemini-2.5-pro',
       'gpt-4.1',
@@ -29,7 +30,8 @@ describe('Recommended models', () => {
       .sort();
 
     const expectedWritingModels = [
-      'claude-sonnet-4-20250514',
+      'claude-opus-4-5-20251101',
+      'claude-sonnet-4-5-20250929',
       'gemini-2.5-pro',
       'gpt-4.1',
       'gpt-5',

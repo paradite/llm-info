@@ -22,7 +22,8 @@
     "compile": "tsup src/index.ts --dts --format esm,cjs",
     "prepublishOnly": "rm -rf ./dist && npm run compile",
     "test": "NODE_OPTIONS=\"$NODE_OPTIONS --experimental-vm-modules\" jest",
-    "test:openai": "jest test/openai.test.ts --runInBand"
+    "test:openai": "jest test/openai.test.ts --runInBand",
+    "test:anthropic": "jest test/anthropic.test.ts --runInBand"
   },
   "author": "paradite",
   "license": "MIT",
@@ -51,6 +52,7 @@
     "fireworks"
   ],
   "devDependencies": {
+    "@anthropic-ai/sdk": "^0.71.2",
     "@google/genai": "^0.13.0",
     "@types/jest": "^29.5.12",
     "@xenova/transformers": "^2.17.2",

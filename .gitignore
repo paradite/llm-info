@@ -61,5 +61,6 @@ typings/
 # dotenv environment variables file
 .env
 
-# Reference
-reference/
+# Reference (except guide)
+reference/*
+!reference/adding_models_guide.md
