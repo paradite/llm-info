@@ -31,18 +31,17 @@ Related projects:
 
 ## Models included
 
-- GPT-4o
-- GPT-4.1
-- o1
-- o3-mini
-- Claude 3.5 Sonnet
-- Claude 3.5 Haiku
-- Claude 3.7 Sonnet
-- Claude Sonnet 4
-- DeepSeek-V3
-- DeepSeek-R1
-- Gemini 2.5 Pro
+- GPT-5.2
+- GPT-5.2 Pro
+- o3
+- o4-mini
+- Claude Opus 4.5
+- Claude Sonnet 4.5
+- Claude Haiku 4.5
+- DeepSeek-V3.1
+- Gemini 3 Pro Preview
 - Gemini 2.5 Flash
+- Grok 4
 - .. and more
 
 Non-models (model-like) included:
@@ -58,6 +57,7 @@ First-party providers:
 - Azure OpenAI
 - DeepSeek
 - Google
+- xAI
 
 Third-party providers:
 

@@ -13,7 +13,7 @@ describe('Recommended models', () => {
       'claude-opus-4-5-20251101',
       'claude-sonnet-4-5-20250929',
       'deepseek-chat',
-      'gemini-2.5-pro',
+      'gemini-3-pro-preview',
       'gpt-5.2',
     ];
 
@@ -31,7 +31,7 @@ describe('Recommended models', () => {
     const expectedWritingModels = [
       'claude-opus-4-5-20251101',
       'claude-sonnet-4-5-20250929',
-      'gemini-2.5-pro',
+      'gemini-3-pro-preview',
       'gpt-5.2',
     ];
 
