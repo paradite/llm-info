@@ -4,7 +4,7 @@ describe('OpenAI API', () => {
   // Skip test if OPENAI_API_KEY is not set
   const testFn = process.env.OPENAI_API_KEY ? it : it.skip;
 
-  const testModels = [ModelEnum['gpt-4.1'], ModelEnum['gpt-5']];
+  const testModels = [ModelEnum['gpt-4.1'], ModelEnum['gpt-5.2']];
   // const testModels = [
   //   ModelEnum['gpt-4.1'],
   //   ModelEnum['o4-mini'],

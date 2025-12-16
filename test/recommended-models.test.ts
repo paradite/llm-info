@@ -14,8 +14,7 @@ describe('Recommended models', () => {
       'claude-sonnet-4-5-20250929',
       'deepseek-chat',
       'gemini-2.5-pro',
-      'gpt-4.1',
-      'gpt-5',
+      'gpt-5.2',
     ];
 
     expect(codingModels).toEqual(expectedCodingModels);
@@ -33,8 +32,7 @@ describe('Recommended models', () => {
       'claude-opus-4-5-20251101',
       'claude-sonnet-4-5-20250929',
       'gemini-2.5-pro',
-      'gpt-4.1',
-      'gpt-5',
+      'gpt-5.2',
     ];
 
     expect(writingModels).toEqual(expectedWritingModels);

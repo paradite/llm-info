@@ -11,6 +11,8 @@ export enum ModelEnum {
   'gpt-5' = 'gpt-5',
   'gpt-5-mini' = 'gpt-5-mini',
   'gpt-5-nano' = 'gpt-5-nano',
+  'gpt-5.2' = 'gpt-5.2',
+  'gpt-5.2-pro' = 'gpt-5.2-pro',
   'o1-preview' = 'o1-preview',
   'o1-mini' = 'o1-mini',
   'o1' = 'o1',
