@@ -9,6 +9,7 @@ Related projects:
 
 - [send-prompt](https://github.com/paradite/send-prompt): A unified TypeScript library for AI model interactions with standardized interfaces and function calling.
 - [ai-file-edit](https://github.com/paradite/ai-file-edit): A library for editing files using AI models such as GPT, Claude, and Gemini.
+- [Frontier Log](https://frontierlog.ai/): When each model was released, from official sources.
 
 ## Information provided
 
