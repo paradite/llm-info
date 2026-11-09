@@ -4,7 +4,11 @@ describe('OpenAI API', () => {
   // Skip test if OPENAI_API_KEY is not set
   const testFn = process.env.OPENAI_API_KEY ? it : it.skip;
 
-  const testModels = [ModelEnum['gpt-4.1'], ModelEnum['gpt-5.2']];
+  const testModels = [
+    // ModelEnum['gpt-4.1'],
+    ModelEnum['gpt-5.2'],
+    ModelEnum['gpt-6.1-sol'],
+  ];
   // const testModels = [
   //   ModelEnum['gpt-4.1'],
   //   ModelEnum['o4-mini'],
@@ -28,7 +32,7 @@ describe('OpenAI API', () => {
         expect(response.choices[0].message.content).toBeTruthy();
         console.log(`${model} Response:`, response.choices[0].message.content);
       },
-      30000
+      30000,
     );
   }
 });
