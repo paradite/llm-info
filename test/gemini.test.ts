@@ -15,7 +15,8 @@ describe('Google Gemini API', () => {
   const testModels = [
     // ModelEnum['gemini-2.5-pro-exp-03-25'],
     ModelEnum['gemini-2.5-flash'],
-    ModelEnum['gemini-2.5-pro'],
+    // ModelEnum['gemini-2.5-pro'],
+    ModelEnum['gemini-3.8-flash'],
   ];
 
   for (const model of testModels) {
@@ -37,7 +38,7 @@ describe('Google Gemini API', () => {
         expect(response.choices[0].message.content).toBeTruthy();
         console.log(`${model} Response:`, response.choices[0].message.content);
       },
-      30000
+      30000,
     );
 
     testFn(
@@ -58,7 +59,7 @@ describe('Google Gemini API', () => {
         expect(response.text).toBeTruthy();
         console.log('Native SDK Response:', JSON.stringify(response, null, 2));
       },
-      30000
+      30000,
     );
   }
 });
