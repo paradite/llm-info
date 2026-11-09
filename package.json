@@ -23,7 +23,9 @@
     "prepublishOnly": "rm -rf ./dist && npm run compile",
     "test": "NODE_OPTIONS=\"$NODE_OPTIONS --experimental-vm-modules\" jest",
     "test:openai": "jest test/openai.test.ts --runInBand",
-    "test:anthropic": "jest test/anthropic.test.ts --runInBand"
+    "test:anthropic": "jest test/anthropic.test.ts --runInBand",
+    "test:openrouter": "jest test/openrouter.test.ts --runInBand",
+    "test:gemini": "jest test/gemini.test.ts --runInBand"
   },
   "author": "paradite",
   "license": "MIT",
