@@ -1,8 +1,8 @@
 {
   "name": "llm-info",
-  "version": "1.0.70",
+  "version": "1.0.71",
   "description": "Information on LLM models, context window token limit, output token limit, pricing and more",
-  "homepage": "https://eval.16x.engineer/",
+  "homepage": "https://frontierlog.ai/",
   "repository": {
     "type": "git",
     "url": "git+ssh://git@github.com/paradite/llm-info.git"
